@@ -1,0 +1,49 @@
+    <body id="loginBody">
+        <div id="loginPage">
+            <mat-card id="loginForm" class="mat-card">
+                <mat-card-header>
+                    <mat-card-title id="mat-card-title">
+                        E-dziennik
+                    </mat-card-title>
+                
+                </mat-card-header>
+                <mat-card-content>
+                    <form (ngSubmit)="studentLogin()">
+                        <div>
+                            <mat-form-field id="loginInput" class="fullWidth">
+                                <mat-label>Login</mat-label>
+                                <input type="text" [(ngModel)]="student.login" name="login"
+                                    id="login" matInput>
+                            </mat-form-field>
+                        </div>
+                        <br>
+                        <div id="passwordInput">
+                            <mat-form-field class="fullWidth">
+                                <mat-label>Hasło</mat-label>
+                                <input type="password" [(ngModel)]="student.password" name="password" id="password"
+                                    matInput>
+                            </mat-form-field>
+                        </div>
+                        <div id="buttonDiv">
+                            <button class="button" type="submit" mat-raised-button>Zaloguj się</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <mat-toolbar class="footer">
+            <div id="footerDivBooks">
+                <img src="/assets/images/books.jpg" alt="books" style="height: 10vh; width: 7vw; margin-left: -1vw;">
+                <a id ="librusHref" href="https://portal.librus.pl/">Poznaj oryginał</a>
+            </div>
+            <div id="footerDivMarks">
+                <img id ="marksImage" src="/assets/images/marks.jpg" alt="marks" style="height: 10vh; width: 7vw;">
+                <p id = "infoParagraph">Zobacz oceny swojego dziecka</p>
+            </div>
+            <div id="footerDivCR">
+                <p>© Marlena Łuczak 2023</p>
+            </div>
+        </mat-toolbar> 
+        
+    </body>
+

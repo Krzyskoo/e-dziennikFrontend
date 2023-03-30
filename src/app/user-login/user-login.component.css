@@ -1,0 +1,127 @@
+#loginInput{
+    margin-bottom: 1vh;
+    color: white;
+    font-weight: bold;
+}
+
+
+.button{
+    font-family: Courier New;
+    background-color: #424242 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.button:hover{
+    background-color: #3a3a3a !important;
+}
+
+#loginForm{
+    width: 22vw;
+    margin: 3vw;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+
+#buttonDiv{
+    display: flex;
+    justify-content: center;
+}
+
+#loginBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #e91e63;
+}
+
+.mdc-floating-label mat-mdc-floating-label{
+    height: 10vh;
+}
+
+#password{
+    height: 5vh;
+    color: white;
+}
+
+#login{
+    height: 5vh;
+    color: white;
+}
+
+#passwordInput{
+    margin-top: -2vh;
+    color: white;
+    font-weight: bold;
+}
+
+
+#mat-card-title{
+    color: white;
+    font-size: 5vh;
+    font-weight: bolder;
+}
+
+#loginPage{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+    color: white;
+    height: 12vh;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: #3a3a3a;
+}
+
+.footer{
+    left: 0;
+    font-size: 2vh;
+}
+
+#librusHref{
+    align-self: center;
+    color: white;
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+#librusHref:hover{
+    text-decoration: underline;
+}
+
+#footerDivBooks{
+    display: flex;
+}
+
+#footerDivMarks{
+    display: flex;
+    justify-content: center;
+}
+
+#infoParagraph{
+    align-self: center;
+    margin-left: 0.5vw;
+}
+
+#footerDivCR{
+    display: flex;
+    justify-content: end;
+}
+
+#marksImage{
+    margin-left: 1.5vw;
+}
+
+input {
+    color: white;
+  }
+  ::-ms-reveal {
+    filter: invert(100%);
+  }
+  
