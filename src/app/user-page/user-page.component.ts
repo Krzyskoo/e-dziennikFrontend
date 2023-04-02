@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentModel, StudentService } from '../user-service/student.service';
+import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-page',
@@ -7,7 +9,7 @@ import { StudentModel, StudentService } from '../user-service/student.service';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
-  constructor(private studentService: StudentService) {
+  constructor(private studentService: StudentService, private router: Router) {
 
   }
 
@@ -22,5 +24,16 @@ export class UserPageComponent implements OnInit {
 
   get getName(){
     return localStorage.getItem('login');
+  }
+
+  toMarks(): void {
+    console.log("witam");
+    this.router.navigate(['/marks']);
+    console.log("zegnam")
+  }
+
+  logout():void{
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

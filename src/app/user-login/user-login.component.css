@@ -7,7 +7,7 @@
 
 .button{
     font-family: Courier New;
-    background-color: #424242 !important;
+    background-color: #2C3333 !important;
     color: white !important;
     font-weight: bold;
 }
@@ -63,12 +63,13 @@
 
 #mat-card-title{
     color: white;
-    font-size: 5vh;
+    font-size: 3vw;
     font-weight: bolder;
 }
 
 #loginPage{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 25px;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row{
@@ -125,3 +126,9 @@ input {
     filter: invert(100%);
   }
   
+
+  @media (max-width: 700px){
+    .footer{
+        display: none;
+    }
+  }

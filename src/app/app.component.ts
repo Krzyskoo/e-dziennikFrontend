@@ -11,4 +11,8 @@ export class AppComponent {
     return localStorage.getItem('role');
   }
 
+  get getName(){
+    return localStorage.getItem('login');
+  }
+
 }
