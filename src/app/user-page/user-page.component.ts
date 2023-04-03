@@ -26,7 +26,10 @@ export class UserPageComponent implements OnInit {
     return localStorage.getItem('login');
   }
 
+  toggle = true;
+
   toMarks(): void {
+    this.toggle = !this.toggle;
     console.log("witam");
     this.router.navigate(['/marks']);
     console.log("zegnam")
@@ -36,4 +39,6 @@ export class UserPageComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/']);
   }
+
+
 }

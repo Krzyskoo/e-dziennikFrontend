@@ -7,28 +7,8 @@
         <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
     </mat-table> -->
-    <mat-toolbar>
-        <mat-toolbar-row>
-            <div id="navbar">
-                <span id="welcomeSpan">
-                    Dzień dobry, {{getName}}
-                </span>
-                <div class="dropdown">
-                    <button id="menuButton" mat-icon-button> <mat-icon>menu</mat-icon></button>
-                    <div class="dropdownContent">
-                        <div class="dropdownMenu">
-                            <mat-icon id="lockIcon">lock</mat-icon>
-                            <a href="#" style="margin-top: 0.8vh; margin-left: -0.5vw;">Zmień hasło</a>
-                        </div>
-                        <div class="dropdownMenu">
-                            <mat-icon id="logoutIcon">logout</mat-icon>
-                            <a (click)="logout()" style="font-size: 2vh;">Wyloguj się</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
+    <!-- 
+                 
     <div id="gridDiv">
         <div class="tile">
             <button class="buttonTile" (click)="toMarks()" style="margin-right: -15vw;">
@@ -47,5 +27,56 @@
             <button class="buttonTile" style="margin-left: -15vw;"></button>
         </div>
 
+    </div> -->
+    <div>
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <div id="navbar">
+                    <span id="welcomeSpan">
+                        Dzień dobry, {{getName}}
+                    </span>
+                    <div class="dropdown">
+                        <button id="menuButton" mat-icon-button> <mat-icon>menu</mat-icon></button>
+                        <div class="dropdownContent">
+                            <div class="dropdownMenu">
+                                <mat-icon id="lockIcon">lock</mat-icon>
+                                <a href="#" style="margin-top: 0.8vh; margin-left: -0.5vw;">Zmień hasło</a>
+                            </div>
+                            <div class="dropdownMenu">
+                                <mat-icon id="logoutIcon">logout</mat-icon>
+                                <a (click)="logout()" style="font-size: 2vh;">Wyloguj się</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <div id="content">
+        <div id="navbar">
+            <mat-nav-list id = "navbarList" role="navigation">
+                    <mat-list-item >
+                        <button class="itemButton">
+                            Oceny
+                        </button>
+                    </mat-list-item>
+                    <mat-list-item >
+                        <button class="itemButton">
+                            Nieobecności
+                        </button>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button class="itemButton">
+                            Uwagi
+                        </button>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button class="itemButton">
+                            Nauczyciele
+                        </button>
+                    </mat-list-item>
+            </mat-nav-list>
+        </div>
+      
     </div>
 </body>

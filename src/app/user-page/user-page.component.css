@@ -3,6 +3,8 @@ body{
     background-color: #3a3a3a;
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-rows: 8vh 92vh;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row{
@@ -13,11 +15,6 @@ body{
     font-weight: bold;
     display: flex;
     justify-content: flex-end;
-}
-
-
-#navbar{
-    display: flex;
 }
 
 #welcomeSpan{
@@ -38,6 +35,7 @@ body{
 }
 
 .dropdown {
+    align-self: center;
     position: relative;
     display: inline-block;
   }
@@ -86,35 +84,53 @@ body{
     margin-right: -0.55vw;
 }
 
-#gridDiv{
-    height: 90%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.tile{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-.buttonTile{
-    font-family: 'Courier New', Courier, monospace;
-    border-radius: 25px;
-    color: white;
-    width: 25vw;
-    height: 30vh;
-    background-color: #e91e63;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.188) 0px 19px 38px, rgba(0, 0, 0, 0.073) 0px 15px 12px;
-}
-
-.buttonTile:hover{
-    cursor: pointer;
-    font-size: 2.3vh;
-    font-weight: bold;
-}
-
 #marksImage{
     transform: rotate(-45deg);
 }
+
+#navbar{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid rgba(255,255,255,.12);
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgba(255, 255, 255, 0.12);
+}
+
+#navbarList{
+    height: 80%;
+    width: 100%;
+    align-self: center;
+    color: white;
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.itemButton{
+    width: 100%;
+    height: 10vh;
+    background-color: #3a3a3a;
+    border: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5vh;
+    text-align: left;
+    padding-left: 1vw;
+}
+
+.itemButton:hover{
+    background-color: #595858;
+}
+
+
+.mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-interactive.mat-mdc-list-item-single-line.mdc-list-item--with-one-line{
+    display: flex;
+    height: 10vh;
+    padding: 0;
+}
+
+
