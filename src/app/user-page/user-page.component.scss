@@ -1,0 +1,182 @@
+ body {
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    color: white;
+    height: 10vh;
+    background-color: #e91e63;
+    font-size: 2vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#welcomeSpan {
+    align-self: center;
+    margin-right: 1vw;
+}
+
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #e91e63;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown {
+    align-self: center;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: auto;
+    z-index: 1;
+
+}
+
+.dropdownContent a {
+    color: white;
+    padding: 1vw 1.05vw;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.dropdown:hover .dropdownContent {
+    display: block;
+    margin-left: -6.25vw;
+}
+
+
+.dropdownMenu {
+    padding-left: 1vw;
+    padding: 2vh;
+}
+
+.dropdownMenu:hover {
+    cursor: pointer;
+}
+
+
+#lockIcon {
+    align-self: center;
+}
+
+#logoutIcon {
+    align-self: center;
+    margin-left: 0.2rem;
+    margin-right: 0.8rem;
+}
+
+#navbar {
+    height: 90%;
+    display: flex;
+}
+
+.itemButton {
+    width: 100%;
+    height: 10vh;
+    background-color: #303030;
+    border: none;
+    color: white;
+    font-size: 2.5vh;
+    text-align: left;
+    padding-left: 1vw;
+}
+
+.itemButton:hover {
+    background-color: #595858;
+    cursor: pointer;
+    color: white;
+}
+
+.itemButton:focus {
+    background: rgba(233, 30, 99, .15);
+    background-color: rgba(233, 30, 99, 0.15);
+    border: none;
+}
+
+
+.mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-interactive.mat-mdc-list-item-single-line.mdc-list-item--with-one-line {
+    display: flex;
+    height: 10vh;
+    padding: 0;
+}
+
+#navbarContent {
+    width: 80vw;
+    color: white;
+}
+
+#navbarDrawer {
+    width: 20vw;
+    border-right: 1px solid rgba(255, 255, 255, .12);
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgba(255, 255, 255, 0.12);
+}
+
+#infoSpan {
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 1vh;
+    font-size: 2vh;
+    padding-left: 1vw;
+}
+
+#toolbarNav {
+    display: flex;
+    justify-content: center;
+}
+
+#menuButton:hover {
+    cursor: pointer;
+    text-align: center;
+}
+
+.mdc-list-item{
+    padding: 0;
+}
+
+.mdc-list{
+    padding: 0;
+} 
+
+.mat-drawer{
+    background-color: #303030;
+}
+
+.mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-single-line.mdc-list-item--with-one-line{
+height: 10vh;
+}
+
+.mat-toolbar-multiple-rows{
+    min-height: 10vh;
+}
+
+.mdc-button{
+    min-width: none;
+}
+
+#matMenu{
+    padding: 10vh;
+}
+
+.mat-mdc-menu-item{
+    padding: 1rem;
+}

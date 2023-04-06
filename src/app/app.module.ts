@@ -15,38 +15,56 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import {MatIconModule} from "@angular/material/icon";
-import {MatListModule} from '@angular/material/list';
+import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from '@angular/material/list';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { UserMarksComponent } from './user-marks/user-marks.component';
+import { MatMenuModule} from '@angular/material/menu';
+import { UserNotesComponent } from './user-notes/user-notes.component';
+import { NoteModel, StudentModel, StudentService } from './user-service/student.service';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
-  { path: 'user', component: UserPageComponent, canActivate: [LoginGuard] },
-  { path: '**', redirectTo: 'user' },
+  {
+    path: 'user', component: UserPageComponent,
+    children: [
+      { path: 'marks', component: UserMarksComponent, canActivate: [LoginGuard] }, 
+      { path: 'notes', component: UserNotesComponent, canActivate: [LoginGuard] }
+    ], canActivate: [LoginGuard]
+  },
+  { path: '**', redirectTo: 'user' }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     UserLoginComponent,
-    UserPageComponent
+    UserPageComponent,
+    UserMarksComponent,
+    UserNotesComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MatTableModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule, 
+    MatInputModule,
     MatButtonModule,
-    MatCardModule, 
-    MatSidenavModule, 
-    MatToolbarModule, 
-    MatIconModule, 
-    MatListModule
+    MatCardModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule, 
+    MatMenuModule, 
+    MatProgressBarModule
 
   ],
-  providers: [],
+  providers: [NoteModel, StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
