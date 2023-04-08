@@ -1,19 +1,10 @@
-#loginInput{
+ #loginInput{
     margin-bottom: 1vh;
-    color: white;
     font-weight: bold;
 }
-
 
 .button{
-    font-family: Courier New;
-    background-color: #2C3333 !important;
-    color: white !important;
     font-weight: bold;
-}
-
-.button:hover{
-    background-color: #3a3a3a !important;
 }
 
 #loginForm{
@@ -24,7 +15,6 @@
 .fullWidth{
     width: 100%;
 }
-
 
 #buttonDiv{
     display: flex;
@@ -37,7 +27,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: #e91e63;
+    background-color: #424242;
 }
 
 .mdc-floating-label mat-mdc-floating-label{
@@ -46,29 +36,25 @@
 
 #password{
     height: 5vh;
-    color: white;
 }
 
 #login{
     height: 5vh;
-    color: white;
 }
 
 #passwordInput{
-    margin-top: -2vh;
-    color: white;
     font-weight: bold;
 }
 
-
 #mat-card-title{
+    margin-bottom: 2vh;
     color: white;
     font-size: 3vw;
     font-weight: bolder;
 }
 
 #loginPage{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.182) 0px 10px 15px, rgba(0, 0, 0, 0.1) 0px 7px 6px;
     border-radius: 25px;
 }
 
@@ -77,7 +63,7 @@
     height: 12vh;
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    background-color: #3a3a3a;
+    background-color: #e91e63;
 }
 
 .footer{
@@ -117,6 +103,11 @@
 
 #marksImage{
     margin-left: 1.5vw;
+    height: 10vh; width: 5vw;
+}
+
+#booksImage{
+    height: 10vh; width: 7vw; margin-left: -1vw;
 }
 
 input {
@@ -131,4 +122,8 @@ input {
     .footer{
         display: none;
     }
+  } 
+
+  .mat-mdc-card{
+    box-shadow: none;
   }

@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
-  styleUrls: ['./user-page.component.css']
+  styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
-  constructor(private studentService: StudentService, private router: Router) {
+  constructor(private studentService: StudentService, public router: Router) {
 
   }
 
@@ -18,7 +18,6 @@ export class UserPageComponent implements OnInit {
     console.log(this.students)
   }
 
-  title = 'dzinniczekFront';
   students : StudentModel[] = [];
   displayColumns : string[] = ['name'];
 
@@ -26,19 +25,20 @@ export class UserPageComponent implements OnInit {
     return localStorage.getItem('login');
   }
 
-  toggle = true;
-
   toMarks(): void {
-    this.toggle = !this.toggle;
+
     console.log("witam");
     this.router.navigate(['/marks']);
     console.log("zegnam")
+  }
+
+  changePassword() : void{
+    console.log("zmien haslo");
   }
 
   logout():void{
     localStorage.clear();
     this.router.navigate(['/']);
   }
-
 
 }

@@ -1,5 +1,4 @@
-<body>
-    <!-- <mat-table [dataSource]=students>
+<!-- <mat-table [dataSource]=students>
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
             <td mat-cell *matCellDef="let student"> {{student.login}} </td>
@@ -7,7 +6,7 @@
         <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
     </mat-table> -->
-    <!-- 
+<!-- 
                  
     <div id="gridDiv">
         <div class="tile">
@@ -28,55 +27,60 @@
         </div>
 
     </div> -->
-    <div>
-        <mat-toolbar>
-            <mat-toolbar-row>
-                <div id="navbar">
-                    <span id="welcomeSpan">
-                        Dzień dobry, {{getName}}
-                    </span>
-                    <div class="dropdown">
-                        <button id="menuButton" mat-icon-button> <mat-icon>menu</mat-icon></button>
-                        <div class="dropdownContent">
-                            <div class="dropdownMenu">
-                                <mat-icon id="lockIcon">lock</mat-icon>
-                                <a href="#" style="margin-top: 0.8vh; margin-left: -0.5vw;">Zmień hasło</a>
-                            </div>
-                            <div class="dropdownMenu">
-                                <mat-icon id="logoutIcon">logout</mat-icon>
-                                <a (click)="logout()" style="font-size: 2vh;">Wyloguj się</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </mat-toolbar-row>
-        </mat-toolbar>
-    </div>
-    <div id="content">
-        <div id="navbar">
-            <mat-nav-list id = "navbarList" role="navigation">
-                    <mat-list-item >
-                        <button class="itemButton">
-                            Oceny
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item >
-                        <button class="itemButton">
-                            Nieobecności
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <button class="itemButton">
-                            Uwagi
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <button class="itemButton">
-                            Nauczyciele
-                        </button>
-                    </mat-list-item>
-            </mat-nav-list>
+<mat-toolbar>
+    <mat-toolbar-row>
+        <div id="toolbarNav">
+            <span id="welcomeSpan">
+                Dzień dobry, {{getName}}
+            </span>
+            <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="changePassword()"><mat-icon id="lockIcon">lock</mat-icon>Zmień hasło</button>
+                <button mat-menu-item (click)="logout()"><mat-icon id="logoutIcon">logout</mat-icon>Wyloguj się</button>
+            </mat-menu>
         </div>
-      
-    </div>
-</body>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container id="navbar">
+    <mat-sidenav mode="side" opened id="navbarDrawer">
+        <mat-list>
+            <mat-list-item>
+                <button class="itemButton" routerLink="/user/marks">
+                    Oceny
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button class="itemButton">
+                    Nieobecności
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button class="itemButton"  routerLink="/user/notes">
+                    Uwagi
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button class="itemButton">
+                    Nauczyciele
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button class="itemButton" routerLink="/user">
+                    Strona główna
+                </button>
+            </mat-list-item>
+        </mat-list>
+        <div id="infoSpan">
+            <span>
+                Edziennik ©2023
+            </span>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content id="navbarContent">
+        <div *ngIf="router.url == '/user'">
+            Strona startowa
+          </div>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
