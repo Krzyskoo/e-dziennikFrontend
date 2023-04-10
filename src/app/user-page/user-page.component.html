@@ -35,7 +35,8 @@
             </span>
             <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="changePassword()"><mat-icon id="lockIcon">lock</mat-icon>Zmień hasło</button>
+                <button mat-menu-item (click)="changePassword()"><mat-icon id="lockIcon">lock</mat-icon>Zmień
+                    hasło</button>
                 <button mat-menu-item (click)="logout()"><mat-icon id="logoutIcon">logout</mat-icon>Wyloguj się</button>
             </mat-menu>
         </div>
@@ -44,6 +45,11 @@
 <mat-sidenav-container id="navbar">
     <mat-sidenav mode="side" opened id="navbarDrawer">
         <mat-list>
+            <mat-list-item >
+                <button class="itemButton" routerLink="/user">
+                    Strona główna
+                </button>
+            </mat-list-item>
             <mat-list-item>
                 <button class="itemButton" routerLink="/user/marks">
                     Oceny
@@ -55,18 +61,13 @@
                 </button>
             </mat-list-item>
             <mat-list-item>
-                <button class="itemButton"  routerLink="/user/notes">
+                <button class="itemButton" routerLink="/user/notes">
                     Uwagi
                 </button>
             </mat-list-item>
             <mat-list-item>
                 <button class="itemButton">
                     Nauczyciele
-                </button>
-            </mat-list-item>
-            <mat-list-item>
-                <button class="itemButton" routerLink="/user">
-                    Strona główna
                 </button>
             </mat-list-item>
         </mat-list>
@@ -77,9 +78,47 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content id="navbarContent">
-        <div *ngIf="router.url == '/user'">
-            Strona startowa
-          </div>
+        <div id="startingPage" *ngIf="router.url == '/user'">
+            <div id="schoolLabel">
+                Donut School
+            </div>
+            <div id="schoolQuotation">
+                Szkoła nie polega na napełnianiu wiadra, ale na rozpalaniu ognia.
+            </div>
+            <div id="schoolInfo">
+                <div>
+                    <img class="startingImage" src="/assets/images/donut.png" alt="donut">
+                    <div class="iconLabel">Szkoła</div>
+                    <div class="infoLabel">
+                        Szkoła powstała w 2010 roku <br>
+                        i od tamtej pory <br>
+                        cieszy się niesłabnącą <br>
+                        popularnością.
+                    </div>
+                </div>
+                <div>
+                    <img class="startingImage" src="/assets/images/teachers.png" alt="teachers">
+                    <div class="iconLabel">Nauczyciele</div>
+                    <div class="infoLabel">
+                        Masz do dyspozycji ponad <br>
+                         50 nauczycieli. <br>
+                        W szkole dostępny jest <br>
+                        szkolny psycholog.
+                    </div>
+                </div>
+                <div>
+                    <img class="startingImage" src="/assets/images/help.png" alt="help">
+                    <div class="iconLabel">Pomoc</div>
+                    <div class="infoLabel">
+                       Pamiętaj, że wszyscy <br>
+                        jesteśmy równi. <br>
+                        Jeśli potrzebujesz pomocy, <br>
+                        jesteśmy tu dla Ciebie.
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 

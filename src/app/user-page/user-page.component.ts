@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentModel, StudentService } from '../user-service/student.service';
-import { Route } from '@angular/router';
+import { StudentModel, StudentService } from '../service/student.service';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DialogChangePasswordComponent } from '../dialog-change-password/dialog-change-password.component';
 
 @Component({
   selector: 'app-user-page',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
-  constructor(private studentService: StudentService, public router: Router) {
+  constructor(private studentService: StudentService, public router: Router, public dialog: MatDialog) {
 
   }
 
@@ -25,18 +26,11 @@ export class UserPageComponent implements OnInit {
     return localStorage.getItem('login');
   }
 
-  toMarks(): void {
-
-    console.log("witam");
-    this.router.navigate(['/marks']);
-    console.log("zegnam")
+  changePassword(): void{
+    this.dialog.open(DialogChangePasswordComponent, {data: {username: localStorage.getItem('login')}});
   }
 
-  changePassword() : void{
-    console.log("zmien haslo");
-  }
-
-  logout():void{
+  logout(): void{
     localStorage.clear();
     this.router.navigate(['/']);
   }

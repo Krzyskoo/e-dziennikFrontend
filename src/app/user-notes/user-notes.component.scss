@@ -1,14 +1,14 @@
-#diaryImage{
-    width: 20vw;
-    height: 15vh;
-    margin-top: 7vh;
-    margin-bottom: 7vh;
-    margin-left: 3vw;
+#notesImage{
+    width: 120px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
 }
 
 #notes{
     display: grid;
     justify-content: center;
+    margin-top: -1.2rem;
 }
 
 
@@ -31,7 +31,7 @@
 .noteContent{
     padding-left: 0.15rem;
     padding-bottom: 0.2rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 
 .mat-mdc-card-content:first-child{
@@ -41,4 +41,17 @@
 #noNotesLabel{
     text-align: center;
     font-size: 5vh;
+}
+
+.headerDivider{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.mat-mdc-card-header{
+    padding-top: 0.3rem;
+}
+
+.mat-mdc-card-title{
+    height: 1.8rem;
 }

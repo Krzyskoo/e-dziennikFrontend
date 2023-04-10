@@ -1,7 +1,13 @@
-<img id="diaryImage" src="/assets/images/diary.jpg" alt="diary">
+<img id="notesImage" src="/assets/images/notes.png" alt="notes">
 <div id="notes" *ngIf="studentNotes.length > 0; else noNotes">
     <div *ngFor="let note of studentNotes">
         <mat-card class="note">
+            <mat-card-header>
+                <mat-card-title
+                    *ngIf="note.type; else negativeType"><mat-icon>insert_emoticon</mat-icon></mat-card-title>
+                <ng-template #negativeType><mat-icon>sentiment_very_dissatisfied</mat-icon></ng-template>
+            </mat-card-header>
+            <mat-divider class="headerDivider"></mat-divider>
             <mat-card-content>
                 <div class="noteContent">
                     {{note.content}}
@@ -10,7 +16,7 @@
             </mat-card-content>
             <mat-card-footer class="noteFooter">
                 <div class="noteInfo">
-                    Dodana {{note.date }} przez {{note.teacher}}
+                    Dodana {{note.date}} przez {{note.teacher}}
                 </div>
                 <mat-progress-bar></mat-progress-bar>
             </mat-card-footer>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../user-service/student.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { StudentService } from '../service/student.service';
+import { MarkService, SubjectModel } from '../service/mark.service';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-user-marks',
@@ -7,12 +9,15 @@ import { StudentService } from '../user-service/student.service';
   styleUrls: ['./user-marks.component.scss']
 })
 export class UserMarksComponent implements OnInit{
-  constructor(private studentService: StudentService){
-
+  studentMarks : SubjectModel[] = [];
+  constructor(private markService: MarkService){
   }
 
   async ngOnInit() {
-    const marks = await this.studentService.getMarks(localStorage.getItem('login')!);
-    console.log(marks);
+   const marks = await this.markService.getMarks(localStorage.getItem('login')!);
+   this.studentMarks = marks;
+
+   console.log(this.studentMarks);
   }
+
 }

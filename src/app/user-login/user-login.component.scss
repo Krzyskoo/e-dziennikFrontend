@@ -103,11 +103,14 @@
 
 #marksImage{
     margin-left: 1.5vw;
-    height: 10vh; width: 5vw;
+    height: 8vh; width: 4vw;
+    margin-right: 0.6vw;
 }
 
 #booksImage{
-    height: 10vh; width: 7vw; margin-left: -1vw;
+    height: 8vh; width: 5vw;
+    margin-right: 1vw;
+    margin-left: 0.5rem;
 }
 
 input {
@@ -126,4 +129,10 @@ input {
 
   .mat-mdc-card{
     box-shadow: none;
+  }
+
+  #loginErrors{
+    color: black;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
   }

@@ -5,16 +5,15 @@
                     <mat-card-title id="mat-card-title">
                         Edziennik
                     </mat-card-title>
-                
                 </mat-card-header>
                 <mat-card-content>
+                    <div *ngIf="anyErrors" id="loginErrors">Nieprawidłowe hasło lub login</div>
                     <form (ngSubmit)="studentLogin()">
                             <mat-form-field id="loginInput" class="fullWidth">
                                 <mat-label>Login</mat-label>
                                 <input type="text" [(ngModel)]="student.login" name="login"
                                     id="login" matInput>
                             </mat-form-field>
-                    
                         <br>
                             <mat-form-field class="fullWidth">
                                 <mat-label>Hasło</mat-label>
@@ -30,11 +29,11 @@
         </div>
         <mat-toolbar class="footer">
             <div id="footerDivBooks">
-                <img id="booksImage" src="/assets/images/books.jpg" alt="books">
+                <img id="booksImage" src="/assets/images/books.png" alt="books">
                 <a id ="librusHref" href="https://portal.librus.pl/">Poznaj oryginał</a>
             </div>
             <div id="footerDivMarks">
-                <img id ="marksImage" src="/assets/images/marks.jpg" alt="marks">
+                <img id ="marksImage" src="/assets/images/marks.png" alt="marks">
                 <p id = "infoParagraph">Zobacz oceny swojego dziecka</p>
             </div>
             <div id="footerDivCR">

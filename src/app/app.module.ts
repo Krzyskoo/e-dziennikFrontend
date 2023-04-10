@@ -21,9 +21,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { UserMarksComponent } from './user-marks/user-marks.component';
 import { MatMenuModule} from '@angular/material/menu';
 import { UserNotesComponent } from './user-notes/user-notes.component';
-import { NoteModel, StudentModel, StudentService } from './user-service/student.service';
-import {MatProgressBarModule} from "@angular/material/progress-bar";
-
+import { StudentModel, StudentService } from './service/student.service';
+import { NoteModel, NoteService } from './service/note.service';
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogChangePasswordComponent } from './dialog-change-password/dialog-change-password.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
@@ -43,8 +47,12 @@ const routes: Routes = [
     UserLoginComponent,
     UserPageComponent,
     UserMarksComponent,
-    UserNotesComponent
+    UserNotesComponent,
+    DialogChangePasswordComponent
   ],
+  entryComponents: [
+    DialogChangePasswordComponent
+  ], 
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -61,7 +69,10 @@ const routes: Routes = [
     MatIconModule,
     MatListModule, 
     MatMenuModule, 
-    MatProgressBarModule
+    MatProgressBarModule, 
+    MatPaginatorModule, 
+    MatDialogModule, 
+    MatExpansionModule
 
   ],
   providers: [NoteModel, StudentService],

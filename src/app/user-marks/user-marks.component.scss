@@ -1,0 +1,42 @@
+#flaskImage{
+    width: 150px;
+    margin-top: 3rem;
+}
+
+.mat-expansion-panel-body{
+    display: flex;
+}
+
+
+.marksDiv{
+    display: flex;
+}
+
+.markValue{
+    margin-right: 1rem;
+}
+
+
+.marginDiv{
+    margin-top: 1rem;
+    width: 60vw;
+}
+
+#flaskDiv{
+    display: flex;
+}
+
+#flaskLabel{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#subjectsDiv{
+    display: grid;
+    justify-content: center;
+}
+
+.markNote{
+   display: flex;
+   justify-content: center;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentModel, StudentService } from '../user-service/student.service';
+import { StudentModel, StudentService } from '../service/student.service';
 import { lastValueFrom } from 'rxjs';
 
 @Component({
@@ -9,8 +9,8 @@ import { lastValueFrom } from 'rxjs';
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
-
   student: StudentModel = new StudentModel();
+  anyErrors: boolean = false;
 
   constructor(private studentService: StudentService, private router: Router) {
 
@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit {
 
       this.router.navigate(['/user']);
     } catch {
-      alert("Sorry")
+      this.anyErrors = true;
     }
   }
 

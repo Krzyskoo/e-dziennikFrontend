@@ -18,6 +18,7 @@
 }
 
 #welcomeSpan {
+    font-size: larger;
     align-self: center;
     margin-right: 1vw;
 }
@@ -149,6 +150,10 @@
     text-align: center;
 }
 
+.itemButton:visited{
+    background-color: #e91e63;
+}
+
 .mdc-list-item{
     padding: 0;
 }
@@ -179,4 +184,46 @@ height: 10vh;
 
 .mat-mdc-menu-item{
     padding: 1rem;
+}
+
+#startingPage{
+    width: 100%;
+}
+
+
+#schoolLabel{
+    font-size: 2.5vw;
+    font-weight: bolder;
+    margin-top: 15vh;
+    text-align: center;
+}
+
+#schoolQuotation{
+    margin-top: 5vh;
+    font-style: italic;
+    text-align: center;
+}
+
+#schoolInfo{
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: center;
+    text-align: center;
+}
+
+.startingImage{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.infoLabel{
+    font-size: 1.8vh;
+}
+
+.iconLabel{
+    font-weight: bold; 
+    font-size: 3vh;
+    margin-bottom: 1vh;
 }
