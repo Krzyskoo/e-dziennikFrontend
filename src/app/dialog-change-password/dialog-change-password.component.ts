@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { NewPassword, StudentModel, StudentService } from '../service/student.service';
 import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dialog-change-password',
@@ -12,7 +13,7 @@ export class DialogChangePasswordComponent implements OnInit{
   newPassword: NewPassword = new NewPassword();
   confirmLogin!: string;
   notTheSame: boolean = false;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private studentService: StudentService, public dialogRef: MatDialogRef<DialogChangePasswordComponent>){
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private studentService: StudentService, public dialogRef: MatDialogRef<DialogChangePasswordComponent>, private _snackBar: MatSnackBar){
 
   }
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class DialogChangePasswordComponent implements OnInit{
         await lastValueFrom(await this.studentService.changePassword(this.newPassword));
         console.log("witam");
         this.dialogRef.close();
+        this._snackBar.open('Hasło zostało zmienione', '', {
+          duration: 2000,     
+          panelClass: ["snackBar"]
+        });
       } else {
         this.notTheSame = true;
       }

@@ -16,6 +16,10 @@
     margin-right: 1rem;
 }
 
+.markValue:hover{
+    cursor: pointer;
+}
+
 
 .marginDiv{
     margin-top: 1rem;
@@ -39,4 +43,9 @@
 .markNote{
    display: flex;
    justify-content: center;
+}
+
+#witam{
+    background: url('/assets/images/flask.png');
+    height: 100%;
 }

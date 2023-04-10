@@ -27,21 +27,24 @@
         </div>
 
     </div> -->
-<mat-toolbar>
-    <mat-toolbar-row>
-        <div id="toolbarNav">
-            <span id="welcomeSpan">
-                Dzień dobry, {{getName}}
-            </span>
-            <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="changePassword()"><mat-icon id="lockIcon">lock</mat-icon>Zmień
-                    hasło</button>
-                <button mat-menu-item (click)="logout()"><mat-icon id="logoutIcon">logout</mat-icon>Wyloguj się</button>
-            </mat-menu>
-        </div>
-    </mat-toolbar-row>
-</mat-toolbar>
+<div id="matToolBar">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <div id="toolbarNav">
+                <span id="welcomeSpan">
+                    Dzień dobry, {{getName}}
+                </span>
+                <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="changePassword()"><mat-icon id="lockIcon">lock</mat-icon>Zmień
+                        hasło</button>
+                    <button mat-menu-item (click)="logout()"><mat-icon id="logoutIcon">logout</mat-icon>Wyloguj się</button>
+                </mat-menu>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+
 <mat-sidenav-container id="navbar">
     <mat-sidenav mode="side" opened id="navbarDrawer">
         <mat-list>
@@ -80,14 +83,14 @@
     <mat-sidenav-content id="navbarContent">
         <div id="startingPage" *ngIf="router.url == '/user'">
             <div id="schoolLabel">
-                Donut School
+                Dziennik elektroniczny szkoły podstawowej <br>im. Pączka Wielkiego w Bydgoszczy
             </div>
             <div id="schoolQuotation">
-                Szkoła nie polega na napełnianiu wiadra, ale na rozpalaniu ognia.
+                
             </div>
             <div id="schoolInfo">
                 <div>
-                    <img class="startingImage" src="/assets/images/donut.png" alt="donut">
+                    <img class="startingImage" src="/assets/images/graduation.png" alt="donut">
                     <div class="iconLabel">Szkoła</div>
                     <div class="infoLabel">
                         Szkoła powstała w 2010 roku <br>

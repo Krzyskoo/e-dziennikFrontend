@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { StudentService } from '../service/student.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MarkService, SubjectModel } from '../service/mark.service';
-import { MatMenuTrigger } from '@angular/material/menu';
+
 
 @Component({
   selector: 'app-user-marks',
   templateUrl: './user-marks.component.html',
-  styleUrls: ['./user-marks.component.scss']
+  styleUrls: ['./user-marks.component.scss'], 
+  encapsulation: ViewEncapsulation.None
 })
 export class UserMarksComponent implements OnInit{
   studentMarks : SubjectModel[] = [];
@@ -16,8 +16,6 @@ export class UserMarksComponent implements OnInit{
   async ngOnInit() {
    const marks = await this.markService.getMarks(localStorage.getItem('login')!);
    this.studentMarks = marks;
-
    console.log(this.studentMarks);
   }
-
 }

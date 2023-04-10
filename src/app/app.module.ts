@@ -28,6 +28,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogChangePasswordComponent } from './dialog-change-password/dialog-change-password.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
@@ -72,7 +74,9 @@ const routes: Routes = [
     MatProgressBarModule, 
     MatPaginatorModule, 
     MatDialogModule, 
-    MatExpansionModule
+    MatExpansionModule, 
+    MatTooltipModule, 
+    MatSnackBarModule
 
   ],
   providers: [NoteModel, StudentService],

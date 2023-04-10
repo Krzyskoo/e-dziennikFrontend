@@ -4,13 +4,14 @@
     height: 100%;
     display: grid;
     grid-template-rows: 10vh 90vh;
+    background-color: #fafafa;
 }
 
 .mat-toolbar-row,
 .mat-toolbar-single-row {
     color: white;
-    height: 10vh;
-    background-color: #e91e63;
+    height: 9.8vh;
+    background-color: #3f51b5;
     font-size: 2vh;
     font-weight: bold;
     display: flex;
@@ -21,44 +22,6 @@
     font-size: larger;
     align-self: center;
     margin-right: 1vw;
-}
-
-
-.dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #e91e63;
-    width: auto;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown {
-    align-self: center;
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: auto;
-    z-index: 1;
-
-}
-
-.dropdownContent a {
-    color: white;
-    padding: 1vw 1.05vw;
-    text-decoration: none;
-    display: block;
-}
-
-
-
-.dropdown:hover .dropdownContent {
-    display: block;
-    margin-left: -6.25vw;
 }
 
 
@@ -90,23 +53,23 @@
 .itemButton {
     width: 100%;
     height: 10vh;
-    background-color: #303030;
+    background-color: #fafafa;
     border: none;
-    color: white;
     font-size: 2.5vh;
     text-align: left;
     padding-left: 1vw;
+    color: #4a4a4ade;
 }
 
 .itemButton:hover {
-    background-color: #595858;
+    background: rgba(0,0,0,.04);
     cursor: pointer;
-    color: white;
 }
 
 .itemButton:focus {
-    background: rgba(233, 30, 99, .15);
-    background-color: rgba(233, 30, 99, 0.15);
+    background: rgba(63,81,181,.15);
+    color: var(--mdc-list-list-item-label-text-color);
+    color: #3f51b5;
     border: none;
 }
 
@@ -119,19 +82,17 @@
 
 #navbarContent {
     width: 80vw;
-    color: white;
 }
 
 #navbarDrawer {
     width: 20vw;
-    border-right: 1px solid rgba(255, 255, 255, .12);
+    border-right: 1px solid rgba(0,0,0,.12);
     border-right-width: 1px;
     border-right-style: solid;
-    border-right-color: rgba(255, 255, 255, 0.12);
+    border-right-color: rgba(0, 0, 0, 0.12);
 }
 
 #infoSpan {
-    color: white;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -150,10 +111,6 @@
     text-align: center;
 }
 
-.itemButton:visited{
-    background-color: #e91e63;
-}
-
 .mdc-list-item{
     padding: 0;
 }
@@ -163,7 +120,11 @@
 } 
 
 .mat-drawer{
-    background-color: #303030;
+    background-color: #fafafa;
+}
+
+.mat-drawer-content{
+    color: rgb(0 0 0 / 74%);
 }
 
 .mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-single-line.mdc-list-item--with-one-line{
@@ -192,8 +153,8 @@ height: 10vh;
 
 
 #schoolLabel{
-    font-size: 2.5vw;
-    font-weight: bolder;
+    font-size: 35px;
+    font-weight: 750;
     margin-top: 15vh;
     text-align: center;
 }
@@ -213,8 +174,8 @@ height: 10vh;
 }
 
 .startingImage{
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 1rem;
 }
 
@@ -226,4 +187,8 @@ height: 10vh;
     font-weight: bold; 
     font-size: 3vh;
     margin-bottom: 1vh;
+}
+
+#matToolBar{
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
 }

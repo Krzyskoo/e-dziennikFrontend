@@ -1,14 +1,13 @@
 <img id="notesImage" src="/assets/images/notes.png" alt="notes">
 <div id="notes" *ngIf="studentNotes.length > 0; else noNotes">
     <div *ngFor="let note of studentNotes">
-        <mat-card class="note">
-            <mat-card-header>
+        <mat-card class="note" [matTooltip]="note.type ? 'Uwaga pozytywna' : 'Uwaga negatywna'">
+            <!-- <mat-card-header>
                 <mat-card-title
                     *ngIf="note.type; else negativeType"><mat-icon>insert_emoticon</mat-icon></mat-card-title>
                 <ng-template #negativeType><mat-icon>sentiment_very_dissatisfied</mat-icon></ng-template>
-            </mat-card-header>
-            <mat-divider class="headerDivider"></mat-divider>
-            <mat-card-content>
+            </mat-card-header> -->
+            <mat-card-content >
                 <div class="noteContent">
                     {{note.content}}
                 </div>

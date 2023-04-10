@@ -1,35 +1,47 @@
-<div id="flaskDiv">
-    <img id="flaskImage" src="/assets/images/flask.png" alt="flask">
-    <div id="flaskLabel">Kursy, w których uczestniczy Twoje dziecko</div>
-</div>
-<div id="subjectsDiv">
-    <div *ngFor="let mark of studentMarks">
-        <div class="marginDiv">
-            <mat-accordion style="margin-bottom: 1rem;">
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            {{mark.subject  | titlecase}}
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="marksDiv">
-                        <div *ngFor="let m of mark.marks" class="marks">
-                            <div class="markValue" #menuTrigger="matMenuTrigger"  [matMenuTriggerFor]="menu" (mouseover)="menuTrigger.openMenu()">
-                                {{m.markValue}}
-                            </div>
-                            <mat-menu #menu="matMenu" [overlapTrigger]="false">
-                                <div class="markNote" (mouseleave)="menuTrigger.closeMenu()">{{m.markNote}}</div>
-                            </mat-menu>
-                        </div>
-                    </div>
-                </mat-expansion-panel>
-            </mat-accordion>
-        </div>
-        <!-- <p>{{mark.subject}}</p>
-        <div *ngFor="let m of mark.marks">
-            <p>{{m.markValue}}</p>
-        </div>  -->
+<div id="witam">
+    <div id="flaskDiv">
+        <img id="flaskImage" src="/assets/images/flask.png" alt="flask">
+        <div id="flaskLabel">Kursy, w których uczestniczy Twoje dziecko</div>
     </div>
+    <div id="subjectsDiv">
+        <div *ngFor="let mark of studentMarks">
+            <div class="marginDiv">
+                <mat-accordion style="margin-bottom: 1rem;">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{mark.subject  | titlecase}}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <!-- <div class="marksDiv">
+                            <div *ngFor="let m of mark.marks" class="marks">
+                                <div class="markValue" #menuTrigger="matMenuTrigger"  [matMenuTriggerFor]="menu" (mouseover)="menuTrigger.openMenu()">
+                                    {{m.markValue}}
+                                </div>
+                                <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                                    <div class="markNote" (mouseleave)="menuTrigger.closeMenu()">{{m.markNote}}</div>
+                                </mat-menu>
+                            </div>
+                        </div> -->
+                        <div class="marksDiv">
+                            <div *ngFor="let m of mark.marks" class="marks">
+                                <div class="markValue" matTooltip={{m.markNote}}>
+                                    {{m.markValue}}
+                                </div>
+                                </div>
+                        </div>
+    
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <!-- <p>{{mark.subject}}</p>
+            <div *ngFor="let m of mark.marks">
+                <p>{{m.markValue}}</p>
+            </div>  -->
+        </div>
+    
+    </div>
+    
+    
 
 </div>
-

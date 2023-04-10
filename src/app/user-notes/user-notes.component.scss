@@ -7,19 +7,21 @@
 
 #notes{
     display: grid;
+    grid-template-columns: 33% 33% 33%;
     justify-content: center;
     margin-top: -1.2rem;
 }
 
 
 .note{
-    margin-bottom: 4vh;
-    width: 60vw;
+    margin-bottom: 3rem;
+    width: 20vw;
+    align-self: center;
 }
 
 .noteFooter{
     text-align: end;
-    font-size: 1.8vh;
+    font-size: 1.6vh;
 }
 
 .noteInfo{
@@ -54,4 +56,22 @@
 
 .mat-mdc-card-title{
     height: 1.8rem;
+}
+
+.ng-star-inserted{
+    display: flex;
+    justify-content: center;
+}
+
+
+// .mat-mdc-progress-bar{
+//     background-color: #3f51b5 ;
+// }
+.iconDiv{
+    display: none;
+}
+
+.note:hover .iconDiv{
+     cursor: pointer;
+     display: block;
 }
