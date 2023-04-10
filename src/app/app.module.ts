@@ -30,6 +30,7 @@ import { DialogChangePasswordComponent } from './dialog-change-password/dialog-c
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { UserTeachersComponent } from './user-teachers/user-teachers.component';
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
@@ -37,7 +38,8 @@ const routes: Routes = [
     path: 'user', component: UserPageComponent,
     children: [
       { path: 'marks', component: UserMarksComponent, canActivate: [LoginGuard] }, 
-      { path: 'notes', component: UserNotesComponent, canActivate: [LoginGuard] }
+      { path: 'notes', component: UserNotesComponent, canActivate: [LoginGuard] }, 
+      { path: 'teachers', component: UserTeachersComponent, canActivate: [LoginGuard] }, 
     ], canActivate: [LoginGuard]
   },
   { path: '**', redirectTo: 'user' }
@@ -50,7 +52,8 @@ const routes: Routes = [
     UserPageComponent,
     UserMarksComponent,
     UserNotesComponent,
-    DialogChangePasswordComponent
+    DialogChangePasswordComponent,
+    UserTeachersComponent
   ],
   entryComponents: [
     DialogChangePasswordComponent

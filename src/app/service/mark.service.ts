@@ -17,7 +17,7 @@ export class MarkService {
       headers: new HttpHeaders(headerDict)
     };
 
-    var result = await this.http.get<SubjectModel[]>(`${this.baseUrl}/subjects/${username}`, requestOptions).toPromise();
+    var result = await this.http.get<SubjectModel[]>(`${this.baseUrl}/subjects/marks/${username}`, requestOptions).toPromise();
     if (!result) {
       return [];
     }
@@ -27,8 +27,6 @@ export class MarkService {
 }
 
 export class SubjectModel{
-  teacherName!: string;
-  teacherSurname!: string;
   subject!: string;
   marks!: MarkModel[];
 }
