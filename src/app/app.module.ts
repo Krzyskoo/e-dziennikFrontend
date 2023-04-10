@@ -23,6 +23,11 @@ import { MatMenuModule} from '@angular/material/menu';
 import { UserNotesComponent } from './user-notes/user-notes.component';
 import { NoteModel, StudentModel, StudentService } from './user-service/student.service';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { NotePageComponent } from './note-page/note-page.component';
+import { GradePageComponent } from './grade-page/grade-page.component';
+import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 
 const routes: Routes = [
@@ -30,10 +35,16 @@ const routes: Routes = [
   {
     path: 'user', component: UserPageComponent,
     children: [
-      { path: 'marks', component: UserMarksComponent, canActivate: [LoginGuard] }, 
+      { path: 'marks', component: UserMarksComponent, canActivate: [LoginGuard] },
       { path: 'notes', component: UserNotesComponent, canActivate: [LoginGuard] }
     ], canActivate: [LoginGuard]
   },
+  { path: 'teacher', component: TeacherPageComponent,
+    children:[
+      { path: 'grade', component: GradePageComponent, canActivate: [LoginGuard] },
+      { path: 'note', component: NotePageComponent, canActivate: [LoginGuard] },
+    ],
+    canActivate: [LoginGuard] },
   { path: '**', redirectTo: 'user' }
 ];
 
@@ -43,7 +54,10 @@ const routes: Routes = [
     UserLoginComponent,
     UserPageComponent,
     UserMarksComponent,
-    UserNotesComponent
+    UserNotesComponent,
+    NotePageComponent,
+    GradePageComponent,
+    TeacherPageComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -59,9 +73,11 @@ const routes: Routes = [
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule, 
-    MatMenuModule, 
-    MatProgressBarModule
+    MatListModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatOptionModule,
+    MatSelectModule
 
   ],
   providers: [NoteModel, StudentService],

@@ -31,8 +31,12 @@ export class UserLoginComponent implements OnInit {
       localStorage.setItem('token', result.token);
       localStorage.setItem('login', tokenObject.iss);
       localStorage.setItem('role', tokenObject.role);
+      if (localStorage.getItem('role')=="ROLE_TEACHER"){
+        this.router.navigate(["/teacher"]);
 
-      this.router.navigate(["/teacher"]);
+      }else if (localStorage.getItem('role')=="ROLE_USER"){
+        this.router.navigate(["/user"]);
+      }
     } catch {
       alert("Sorry")
     }

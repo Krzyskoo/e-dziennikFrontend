@@ -1,0 +1,57 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div id="toolbarNav">
+            <span id="welcomeSpan">
+                Dzień dobry, {{getName}}
+            </span>
+      <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changePassword()"><mat-icon id="lockIcon">lock</mat-icon>Zmień hasło</button>
+        <button mat-menu-item (click)="logout()"><mat-icon id="logoutIcon">logout</mat-icon>Wyloguj się</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container id="navbar">
+  <mat-sidenav mode="side" opened id="navbarDrawer">
+    <mat-list>
+      <mat-list-item>
+        <button class="itemButton" routerLink="/teacher/grade">
+          Wpisz oceny
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="itemButton">
+          Nieobecności
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="itemButton"  routerLink="/teacher/note">
+          Wpisz uwage
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="itemButton">
+          Nauczyciele
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="itemButton" routerLink="/user">
+          Strona główna
+        </button>
+      </mat-list-item>
+    </mat-list>
+    <div id="infoSpan">
+            <span>
+                Edziennik ©2023
+            </span>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content id="navbarContent">
+    <div *ngIf="router.url == '/teacher'">
+      Strona startowa
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

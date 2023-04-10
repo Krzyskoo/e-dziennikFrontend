@@ -15,8 +15,8 @@ export class StudentService {
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
-    
-    const requestOptions = {                                                                                                                                                                                 
+
+    const requestOptions = {
       headers: new HttpHeaders(headerDict)
     };
 
@@ -36,8 +36,8 @@ export class StudentService {
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
-    
-    const requestOptions = {                                                                                                                                                                                 
+
+    const requestOptions = {
       headers: new HttpHeaders(headerDict)
     };
 
@@ -53,8 +53,8 @@ export class StudentService {
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
-    
-    const requestOptions = {                                                                                                                                                                                 
+
+    const requestOptions = {
       headers: new HttpHeaders(headerDict)
     };
 
@@ -62,11 +62,39 @@ export class StudentService {
     if (!result) {
       return [];
     }
-    
+
     return result;
+  }
+  async getTeachers() : Promise<StudentModel[]> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+
+    var result = await this.http.get<StudentModel[]>(`${this.baseUrl}/teachers`, requestOptions).toPromise();
+    if (!result) {
+      return [];
+    }
+
+    return result;
+  }
+  async saveNote(noteModel: NoteModel) {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    const requestOptions = {
+      headers: new HttpHeaders
+    };
+    return this.http.post<NoteModel>(`${this.baseUrl}/note`, NoteModel, requestOptions).toPromise();
   }
 
 }
+
+
 
 
 
@@ -84,4 +112,5 @@ export class NoteModel{
   content!: string;
   teacher!: string;
   date!: string;
+  student!: string;
 }
