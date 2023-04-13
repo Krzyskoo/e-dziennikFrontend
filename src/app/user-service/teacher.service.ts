@@ -26,14 +26,30 @@ export class TeacherService{
 
     return result;
   }
-  async saveNote(noteModel: NoteModel, username:string) {
+  async saveNote(noteModel: NoteModel, username: string, id:string) {
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
     const requestOptions = {
       headers: new HttpHeaders(headerDict)
     };
-    return this.http.post<NoteModel>(`${this.baseUrl}/notes/${username}`, NoteModel, requestOptions).toPromise();
+    return this.http.post<NoteModel>(`${this.baseUrl}/notes/${id}`, NoteModel, requestOptions).toPromise();
+  }
+  async getStudentById(id: undefined) : Promise<StudentModel[]> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+
+    var result = await this.http.get<StudentModel[]>(`${this.baseUrl}/students/${id}`, requestOptions).toPromise();
+    if (!result) {
+      return [];
+    }
+
+    return result;
   }
 
 }
@@ -49,6 +65,6 @@ export class AuthResult {
 
 export class NoteModel{
   content!: string;
-  teacher!: string;
+  student!: string;
   date!: string;
 }

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NoteModel, StudentModel, StudentService} from "../user-service/student.service";
 import {TeacherService} from "../user-service/teacher.service";
+import {ActivatedRoute} from "@angular/router";
+import {NoteService} from "../user-service/note.service";
 
 @Component({
   selector: 'app-note-page',
@@ -9,25 +11,24 @@ import {TeacherService} from "../user-service/teacher.service";
 })
 export class NotePageComponent implements OnInit{
 
-  constructor(private studentService: StudentService, private noteModel: NoteModel) {
-  }
-  note : NoteModel= new NoteModel();
-  student : StudentModel[] = [] ;
-  teacher : StudentModel[]= [];
+  studentId!: number;
+  noteContent!: string;
+  kindOfNote!:boolean;
 
+  constructor(private route: ActivatedRoute, private noteService: NoteService) { }
 
-  async ngOnInit() {
-    this.student = await this.studentService.getStudents();
-    console.log(this.student)
-    this.teacher = await this.studentService.getTeachers();
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.studentId = +params['id'];
+    });
   }
 
   onSubmit() {
-    this.studentService.saveNote(this.note).then(note => {
-      console.log('Note added:', note);
-      this.note = new NoteModel();
-    })
-      .catch(error => console.error('Error adding note:', error));;
-
+    this.noteService.createNoteForStudent(this.studentId, this.noteContent, this.kindOfNote).subscribe(() => {
+      console.log('Note created successfully');
+    }, (error) => {
+      console.log('Error creating note:', error);
+    });
   }
+
 }
