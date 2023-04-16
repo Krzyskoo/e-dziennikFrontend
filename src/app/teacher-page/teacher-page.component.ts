@@ -22,13 +22,6 @@ export class TeacherPageComponent implements OnInit{
     return localStorage.getItem('login');
   }
 
-  toMarks(): void {
-
-    console.log("witam");
-    this.router.navigate(['/marks']);
-    console.log("zegnam")
-  }
-
   changePassword() : void{
     console.log("zmien haslo");
   }

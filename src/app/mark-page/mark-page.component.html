@@ -1,0 +1,31 @@
+<div class="submit-form">
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newMark()">Add Another</button>
+  </div>
+
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="username">Student username</label>
+      <input type="text" class="form-control" id="username" required [(ngModel)]="username" name="username">
+    </div>
+
+    <div class="form-group">
+      <label>Typ oceny:</label>
+      <select [(ngModel)]="markNote" name="markNote">
+        <option value="Sprawdzian">Sprawdzian</option>
+        <option value="Zadanie domowe">Zadanie domowe</option>
+        <option value="Odpowiedź ustna">Odpowiedź ustna</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Wartość oceny:</label>
+      <select [(ngModel)]="markValue" name="markValue">
+        <option *ngFor="let value of [1, 2, 3, 4, 5]" [value]="value">{{ value }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+  </div>
+</div>

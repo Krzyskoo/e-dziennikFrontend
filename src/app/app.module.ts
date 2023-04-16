@@ -28,6 +28,7 @@ import { GradePageComponent } from './grade-page/grade-page.component';
 import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import {MarkPageComponent} from "./mark-page/mark-page.component";
 
 
 const routes: Routes = [
@@ -43,6 +44,8 @@ const routes: Routes = [
     children:[
       { path: 'grade', component: GradePageComponent, canActivate: [LoginGuard] },
       { path: 'note', component: NotePageComponent, canActivate: [LoginGuard] },
+      { path: 'mark', component: MarkPageComponent, canActivate: [LoginGuard] },
+
     ],
     canActivate: [LoginGuard] },
   { path: '**', redirectTo: 'user' }
@@ -57,7 +60,8 @@ const routes: Routes = [
     UserNotesComponent,
     NotePageComponent,
     GradePageComponent,
-    TeacherPageComponent
+    TeacherPageComponent,
+    MarkPageComponent
   ],
   imports: [
     BrowserAnimationsModule,

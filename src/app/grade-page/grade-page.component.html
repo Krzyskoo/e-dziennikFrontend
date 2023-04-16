@@ -1,1 +1,18 @@
-<p>grade-page works!</p>
+<h1>List of Grades</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Grade Name</th>
+    <th>Number of Students</th>
+    <th>Number of Teachers</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let grade of grades">
+    <td>{{ grade.gradeName }}</td>
+    <td>{{ grade.students.length }}</td>
+    <td>{{ grade.teachers.length }}</td>
+  </tr>
+  </tbody>
+</table>
