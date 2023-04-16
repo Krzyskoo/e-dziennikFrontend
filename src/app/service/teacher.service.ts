@@ -18,13 +18,15 @@ export class TeacherService {
       headers: new HttpHeaders(headerDict)
     };
 
-    var result = await lastValueFrom(this.http.get<TeacherModel[]>(`${this.baseUrl}/${username}/teachers`, requestOptions));
+    var result = await lastValueFrom(this.http.get<TeacherModel[]>(`${this.baseUrl}/teachers`, requestOptions));
     if (!result) {
       return [];
     }
 
     return result;
   }
+
+
 
 }
 
@@ -35,3 +37,8 @@ export class TeacherModel{
   classroom!: string;
   teacherInfo!: string;
 }
+
+export class OneTeacherModel{
+  teacherFullName!: string;
+}
+

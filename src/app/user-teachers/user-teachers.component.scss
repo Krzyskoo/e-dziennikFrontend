@@ -1,0 +1,68 @@
+#teacherDiv{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100%;
+}
+
+#teacherImage{
+    margin-top: 0.4rem;
+    width: 40vw;
+    opacity: 0.3;
+    position: absolute;
+    height: 88vh;
+}
+
+#teacherNameInput{
+    margin-top: 20vh;
+    margin-left: 5vw;
+    width: 20vw;
+    margin-bottom: 10vh;
+}
+
+#teacherCard{
+    margin-left: 5vw;
+    width: 30vw;
+}
+
+#teacherCardHeader{
+    font-size: larger;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+#teacherCardContent{
+    padding: 0;
+}
+
+.teacherCardContentDiv{
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    display: flex;
+}
+
+#teacherPhone{
+    color: #3f51b5;
+}
+
+#teacherPhone:hover{
+    cursor: pointer;
+}
+
+.teacherCardIcon{
+    margin-left: 1rem;
+    margin-right: 0.1rem;
+    margin-top: -0.3rem;
+}
+
+#teacherCardContentRoom{
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer) {
+    padding-bottom: 16px;
+}
+
+#teacheInfoDiv{
+    margin-left: 5vw;
+}

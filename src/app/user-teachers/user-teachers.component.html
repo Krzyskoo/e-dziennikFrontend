@@ -1,1 +1,46 @@
-<p>user-teachers works!</p>
+<div id="teacherDiv">
+    <div>
+        <img src="/assets/images/woman.png" alt="teacher" id="teacherImage">
+    </div>
+    <div id="teacheInfoDiv">
+        <form>
+            <mat-form-field id="teacherNameInput">
+                <input matInput name="filter" type="text" placeholder="Wyszukaj nauczyciela" [matAutocomplete]="auto"
+                    [(ngModel)]="filterValue" (ngModelChange)="onChange($event)">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let name of filteredTeachersNames" [value]="name"
+                    (click)="onSelect(name)">
+                        {{name}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form> 
+        
+        <div *ngIf="selected">
+            <mat-card id="teacherCard">
+                <mat-card-header id="teacherCardHeader">
+                    {{selectedTeacher.teacherName}} {{selectedTeacher.teacherSurname}}
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <mat-card-content id="teacherCardContent">
+                    <div class="teacherCardContentDiv">
+                        <mat-icon class="teacherCardIcon">phone</mat-icon> <p id="teacherPhone">{{selectedTeacher.telephone}}</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="teacherCardContentDiv">
+                        <mat-icon class="teacherCardIcon">meeting_room</mat-icon> <p>{{selectedTeacher.classroom}}</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="teacherCardContentDiv" style="margin-left: 1rem; margin-right: 1rem;">
+                        {{selectedTeacher.teacherInfo}}
+                    </div>
+
+                </mat-card-content>
+                
+            </mat-card>
+           
+        </div>
+    </div>
+</div>
+
+

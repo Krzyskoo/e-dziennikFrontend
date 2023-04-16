@@ -10,7 +10,7 @@ export class NoteService {
 
   constructor(private http : HttpClient) { }
 
-  async getNotes(username : string) : Promise<NoteModel[]>{
+  async getNotes() : Promise<NoteModel[]>{
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
@@ -19,7 +19,7 @@ export class NoteService {
       headers: new HttpHeaders(headerDict)
     };
 
-    var result = await lastValueFrom(this.http.get<NoteModel[]>(`${this.baseUrl}/notes/${username}`, requestOptions));
+    var result = await lastValueFrom(this.http.get<NoteModel[]>(`${this.baseUrl}/notes`, requestOptions));
     if (!result) {
       return [];
     }

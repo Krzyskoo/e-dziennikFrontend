@@ -1,77 +1,172 @@
-#notesImage{
-    width: 120px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 2rem;
-}
-
 #notes{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
     justify-content: center;
-    margin-top: -1.2rem;
+    margin-top: 0.5rem;
+    margin-right: -2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+}
+
+// .note{
+//     width: 70vw;
+//     height: auto;
+//     display: grid;
+//     grid-template-columns: 30% 70%;
+// }
+
+// .noteInfo{
+//     text-align: end;
+//     font-size: 1.6vh;
+//     margin-right: 0.4rem;
+//     padding-top: 0.2rem;
+//     padding-bottom: 0.2rem;
+// }
+
+// .noteContent{
+//     padding-top: 2rem;
+//     padding-left: 0.15rem;
+//     padding-bottom: 0.2rem;
+//     height: 14vh;
+//     font-size: 2vh;
+//     padding-right: 0.1rem;
+// }
+
+// #noNotesLabel{
+//     margin-top: 10rem;
+//     text-align: center;
+//     font-size: 5vh;
+//     color: #4a4a4ade;
+// }
+
+// .ng-star-inserted{
+//     display: flex;
+//     justify-content: center;
+// }
+
+// #notesImage{
+//     width: 60px;
+//     align-self: center;
+// }
+
+// .noteDiv{
+//     width: 22vw;
+//     height: 22vh;
+//     display: flex;
+//     margin-bottom: 2.2rem;
+//    box-shadow: rgba(6, 6, 51, 0.12) 0px 3px 6px;
+//     border-radius: 10px;
+// }
+
+// .noteLeft{
+//     display: flex;
+//     justify-content: center;
+//     // border-right: 1px solid rgba(0, 0, 0, .12);
+//     //  border-right-width: 1px;
+//     //  border-right-style: solid;
+//     //  border-right-color: rgba(0, 0, 0, 0.12);
+// }
+#notesDiv{
+    display: grid;
+    margin-left: 32vw;
+}
+
+#noteImage{
+    opacity: 0.3;
+    position: absolute;
+    height: 675px;
+    margin-top: -0.2rem;
 }
 
 
-.note{
-    margin-bottom: 3rem;
-    width: 20vw;
-    align-self: center;
+#positiveNote{
+    color: white;
+    background-color: #009f00;
+    margin-left: 5vw;
+    width: 13vw;
 }
 
-.noteFooter{
-    text-align: end;
-    font-size: 1.6vh;
+#negativeNote{
+    background-color: #ff0000;
+    color: white;
+    margin-top: 3rem;
+    margin-left: 5vw;
+    width: 13vw;
 }
 
-.noteInfo{
-    margin-right: 1rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+#imageWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    height: 90%;
 }
 
-.noteContent{
-    padding-left: 0.15rem;
-    padding-bottom: 0.2rem;
-    padding-top: 0.5rem;
+#allNotes{
+    width: 13vw;
+    margin-left: 5vw;
+    margin-top: 3rem;
 }
 
-.mat-mdc-card-content:first-child{
-    padding-top: 0;
-}
-
-#noNotesLabel{
-    text-align: center;
-    font-size: 5vh;
-}
-
-.headerDivider{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.mat-mdc-card-header{
-    padding-top: 0.3rem;
-}
-
-.mat-mdc-card-title{
-    height: 1.8rem;
-}
 
 .ng-star-inserted{
+    height: 90%;
+    width: 90%;
     display: flex;
     justify-content: center;
 }
 
-
-// .mat-mdc-progress-bar{
-//     background-color: #3f51b5 ;
-// }
-.iconDiv{
-    display: none;
+.noteCard{
+    height: inherit;
+    width: inherit;
 }
 
-.note:hover .iconDiv{
-     cursor: pointer;
-     display: block;
+.noteCardContent{
+    height: 12rem;
+    padding: 0;
+}
+
+#noteInfo{
+    margin-left: 5rem;
+}
+
+.contentParagraph{
+    margin-left: 0.7rem;
+    margin-right: 0.6rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.noteCardHeader{
+    margin: 0.5rem;
+    padding: 0;
+}
+
+.personIcon{
+    margin-bottom: -0.3rem;
+    margin-left: -0.1rem;
+}
+
+.noteCardContentDiv{
+    display: flex;
+
+}
+
+.noteParagraph{
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.calendarIcon{
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+#showAllNotes{
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-right: -2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 45%;
 }

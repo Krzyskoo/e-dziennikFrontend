@@ -29,20 +29,23 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogChangePasswordComponent } from './dialog-change-password/dialog-change-password.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserTeachersComponent } from './user-teachers/user-teachers.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
   {
-    path: 'user', component: UserPageComponent,
+    path: 'student', component: UserPageComponent,
     children: [
       { path: 'marks', component: UserMarksComponent, canActivate: [LoginGuard] }, 
       { path: 'notes', component: UserNotesComponent, canActivate: [LoginGuard] }, 
       { path: 'teachers', component: UserTeachersComponent, canActivate: [LoginGuard] }, 
     ], canActivate: [LoginGuard]
   },
-  { path: '**', redirectTo: 'user' }
+  { path: '**', redirectTo: 'student' }
 ];
 
 @NgModule({
@@ -79,7 +82,10 @@ const routes: Routes = [
     MatDialogModule, 
     MatExpansionModule, 
     MatTooltipModule, 
-    MatSnackBarModule
+    MatSnackBarModule, 
+    MatGridListModule, 
+    MatAutocompleteModule, 
+    ReactiveFormsModule
 
   ],
   providers: [NoteModel, StudentService],

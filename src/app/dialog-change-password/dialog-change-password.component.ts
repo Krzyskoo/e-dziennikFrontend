@@ -22,13 +22,12 @@ export class DialogChangePasswordComponent implements OnInit{
   async changePassword() {
       if(this.newPassword.password == this.confirmLogin){
         this.newPassword.login = localStorage.getItem('login')!;
-        console.log(this.newPassword);
         await lastValueFrom(await this.studentService.changePassword(this.newPassword));
-        console.log("witam");
         this.dialogRef.close();
         this._snackBar.open('Hasło zostało zmienione', '', {
-          duration: 2000,     
-          panelClass: ["snackBar"]
+          duration: 1500,     
+          panelClass: ["snackBar"], 
+          verticalPosition: 'top'
         });
       } else {
         this.notTheSame = true;

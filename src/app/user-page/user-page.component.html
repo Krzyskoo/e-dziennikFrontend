@@ -49,27 +49,27 @@
     <mat-sidenav mode="side" opened id="navbarDrawer">
         <mat-list>
             <mat-list-item >
-                <button class="itemButton" routerLink="/user">
+                <button class="itemButton" routerLink="/student" [class.focusedItemButton]="currentUrl == '/student'">
                     Strona główna
                 </button>
             </mat-list-item>
             <mat-list-item>
-                <button class="itemButton" routerLink="/user/marks">
+                <button class="itemButton" routerLink="/student/marks" [class.focusedItemButton]="currentUrl == '/student/marks'">
                     Oceny
                 </button>
             </mat-list-item>
-            <mat-list-item>
+            <!-- <mat-list-item>
                 <button class="itemButton">
                     Nieobecności
                 </button>
-            </mat-list-item>
+            </mat-list-item> -->
             <mat-list-item>
-                <button class="itemButton" routerLink="/user/notes">
+                <button class="itemButton" routerLink="/student/notes" [class.focusedItemButton]="currentUrl == '/student/notes'">
                     Uwagi
                 </button>
             </mat-list-item>
             <mat-list-item>
-                <button class="itemButton" routerLink="/user/teachers">
+                <button class="itemButton" routerLink="/student/teachers" [class.focusedItemButton]="currentUrl == '/student/teachers'">
                     Nauczyciele
                 </button>
             </mat-list-item>
@@ -81,7 +81,7 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content id="navbarContent">
-        <div id="startingPage" *ngIf="router.url == '/user'">
+        <div id="startingPage" *ngIf="router.url == '/student'">
             <div id="schoolLabel">
                 Dziennik elektroniczny szkoły podstawowej <br>im. Pączka Wielkiego w Bydgoszczy
             </div>
@@ -89,7 +89,7 @@
                 
             </div>
             <div id="schoolInfo">
-                <div>
+                <div class="schoolInfoDiv">
                     <img class="startingImage" src="/assets/images/graduation.png" alt="donut">
                     <div class="iconLabel">Szkoła</div>
                     <div class="infoLabel">
@@ -99,7 +99,7 @@
                         popularnością.
                     </div>
                 </div>
-                <div>
+                <div class="schoolInfoDiv">
                     <img class="startingImage" src="/assets/images/teachers.png" alt="teachers">
                     <div class="iconLabel">Nauczyciele</div>
                     <div class="infoLabel">
@@ -109,7 +109,7 @@
                         szkolny psycholog.
                     </div>
                 </div>
-                <div>
+                <div class="schoolInfoDiv">
                     <img class="startingImage" src="/assets/images/help.png" alt="help">
                     <div class="iconLabel">Pomoc</div>
                     <div class="infoLabel">

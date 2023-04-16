@@ -1,6 +1,8 @@
-#flaskImage{
-    width: 150px;
-    margin-top: 3rem;
+#microscopeImage{
+    opacity: 0.3;
+    position: absolute;
+    width: 670px;
+    height: auto;
 }
 
 .mat-expansion-panel-body{
@@ -11,15 +13,6 @@
 .marksDiv{
     display: flex;
 }
-
-.markValue{
-    margin-right: 1rem;
-}
-
-.markValue:hover{
-    cursor: pointer;
-}
-
 
 .marginDiv{
     margin-top: 1rem;
@@ -45,7 +38,46 @@
    justify-content: center;
 }
 
-#witam{
-    background: url('/assets/images/flask.png');
-    height: 100%;
+#imageWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+#subjectParagraph{
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 2rem;
+}
+
+.markValueExam{
+    background-color: #ff0000;
+    color: white;
+}
+
+.markValueTest{
+    background-color: #009f00;
+    color: white;
+}
+
+.marks{
+    width: 1.6rem;
+    height: auto;
+    margin-right: 0.5rem;
+    text-align: center;
+}
+
+.marks:hover{
+    cursor: pointer;
+}
+
+.markValueDefault{
+    border: solid;
+    border-width: 0.1px;
+    border-color: #3f51b5;
+}
+
+.markValueOralTest{
+    background-color: rgb(255, 149, 0);
+    color: white;
 }

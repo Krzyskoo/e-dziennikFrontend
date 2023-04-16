@@ -27,10 +27,20 @@ button{
 }
  
 mat-tooltip-component .mdc-tooltip__surface {
-    background-color: #3f51b5;
+    background-color: #fafafa;
+    color: #3f51b5;
+    border: solid;
+    border-color: #3f51b5;
+    border-width: 1px;
 }
 
 .snackBar {
     --mdc-snackbar-container-color: rgb(27, 146, 27) !important;
     text-align: center;
+    transform: translateY(45vh) !important;;
+}
+
+
+p{
+    margin: 0;
 }

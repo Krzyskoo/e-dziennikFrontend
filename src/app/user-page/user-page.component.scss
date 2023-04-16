@@ -1,194 +1,197 @@
  body {
-    margin: 0 !important;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 10vh 90vh;
-    background-color: #fafafa;
-}
+     margin: 0 !important;
+     width: 100%;
+     height: 100%;
+     display: grid;
+     grid-template-rows: 10vh 90vh;
+     background-color: #fafafa;
+ }
 
-.mat-toolbar-row,
-.mat-toolbar-single-row {
-    color: white;
-    height: 9.8vh;
-    background-color: #3f51b5;
-    font-size: 2vh;
-    font-weight: bold;
-    display: flex;
-    justify-content: flex-end;
-}
+ .mat-toolbar-row,
+ .mat-toolbar-single-row {
+     color: white;
+     height: 9.8vh;
+     background-color: #3f51b5;
+     font-size: 2vh;
+     font-weight: bold;
+     display: flex;
+     justify-content: flex-end;
+ }
 
-#welcomeSpan {
-    font-size: larger;
-    align-self: center;
-    margin-right: 1vw;
-}
+ #welcomeSpan {
+     font-size: larger;
+     align-self: center;
+     margin-right: 1vw;
+ }
 
 
-.dropdownMenu {
-    padding-left: 1vw;
-    padding: 2vh;
-}
+ .dropdownMenu {
+     padding-left: 1vw;
+     padding: 2vh;
+ }
 
-.dropdownMenu:hover {
+ .dropdownMenu:hover {
+     cursor: pointer;
+ }
+
+
+ #lockIcon {
+     align-self: center;
+ }
+
+ #logoutIcon {
+     align-self: center;
+     margin-left: 0.2rem;
+     margin-right: 0.8rem;
+ }
+
+ #navbar {
+     height: 90%;
+     display: flex;
+ }
+
+ .itemButton {
+     width: 100%;
+     height: 10vh;
+     background-color: #fafafa;
+     border: none;
+     font-size: 2.5vh;
+     text-align: left;
+     padding-left: 1vw;
+     color: #4a4a4ade;
+ }
+
+ .itemButton:hover {
     cursor: pointer;
-}
+    
+    &:not(.focusedItemButton) {
+         background: rgba(0, 0, 0, .04);
+    }
+ }
+
+ .focusedItemButton {
+     background: rgba(63, 81, 181, .15);
+     color: var(--mdc-list-list-item-label-text-color);
+     color: #3f51b5;
+     border: none;
+ }
 
 
-#lockIcon {
-    align-self: center;
-}
+ .mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-interactive.mat-mdc-list-item-single-line.mdc-list-item--with-one-line {
+     display: flex;
+     height: 10vh;
+     padding: 0;
+ }
 
-#logoutIcon {
-    align-self: center;
-    margin-left: 0.2rem;
-    margin-right: 0.8rem;
-}
+ #navbarContent {
+     width: 80vw;
+ }
 
-#navbar {
-    height: 90%;
-    display: flex;
-}
+ #navbarDrawer {
+     width: 20vw;
+     border-right: 1px solid rgba(0, 0, 0, .12);
+     border-right-width: 1px;
+     border-right-style: solid;
+     border-right-color: rgba(0, 0, 0, 0.12);
+ }
 
-.itemButton {
-    width: 100%;
-    height: 10vh;
-    background-color: #fafafa;
-    border: none;
-    font-size: 2.5vh;
-    text-align: left;
-    padding-left: 1vw;
-    color: #4a4a4ade;
-}
+ #infoSpan {
+     display: flex;
+     justify-content: center;
+     position: fixed;
+     bottom: 1vh;
+     font-size: 2vh;
+     padding-left: 1vw;
+ }
 
-.itemButton:hover {
-    background: rgba(0,0,0,.04);
-    cursor: pointer;
-}
+ #toolbarNav {
+     display: flex;
+     justify-content: center;
+ }
 
-.itemButton:focus {
-    background: rgba(63,81,181,.15);
-    color: var(--mdc-list-list-item-label-text-color);
-    color: #3f51b5;
-    border: none;
-}
+ #menuButton:hover {
+     cursor: pointer;
+     text-align: center;
+ }
 
+ .mdc-list-item {
+     padding: 0;
+ }
 
-.mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-interactive.mat-mdc-list-item-single-line.mdc-list-item--with-one-line {
-    display: flex;
-    height: 10vh;
-    padding: 0;
-}
+ .mdc-list {
+     padding: 0;
+ }
 
-#navbarContent {
-    width: 80vw;
-}
+ .mat-drawer {
+     background-color: #fafafa;
+ }
 
-#navbarDrawer {
-    width: 20vw;
-    border-right: 1px solid rgba(0,0,0,.12);
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: rgba(0, 0, 0, 0.12);
-}
+ .mat-drawer-content {
+     color: rgb(0 0 0 / 74%);
+ }
 
-#infoSpan {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 1vh;
-    font-size: 2vh;
-    padding-left: 1vw;
-}
+ .mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-single-line.mdc-list-item--with-one-line {
+     height: 10vh;
+ }
 
-#toolbarNav {
-    display: flex;
-    justify-content: center;
-}
+ .mat-toolbar-multiple-rows {
+     min-height: 10vh;
+ }
 
-#menuButton:hover {
-    cursor: pointer;
-    text-align: center;
-}
+ .mdc-button {
+     min-width: none;
+ }
 
-.mdc-list-item{
-    padding: 0;
-}
+ #matMenu {
+     padding: 10vh;
+ }
 
-.mdc-list{
-    padding: 0;
-} 
+ .mat-mdc-menu-item {
+     padding: 1rem;
+ }
 
-.mat-drawer{
-    background-color: #fafafa;
-}
-
-.mat-drawer-content{
-    color: rgb(0 0 0 / 74%);
-}
-
-.mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-single-line.mdc-list-item--with-one-line{
-height: 10vh;
-}
-
-.mat-toolbar-multiple-rows{
-    min-height: 10vh;
-}
-
-.mdc-button{
-    min-width: none;
-}
-
-#matMenu{
-    padding: 10vh;
-}
-
-.mat-mdc-menu-item{
-    padding: 1rem;
-}
-
-#startingPage{
-    width: 100%;
-}
+ #startingPage {
+     width: 100%;
+ }
 
 
-#schoolLabel{
-    font-size: 35px;
-    font-weight: 750;
-    margin-top: 15vh;
-    text-align: center;
-}
+ #schoolLabel {
+     font-size: 35px;
+     font-weight: 750;
+     margin-top: 15vh;
+     text-align: center;
+ }
 
-#schoolQuotation{
-    margin-top: 5vh;
-    font-style: italic;
-    text-align: center;
-}
 
-#schoolInfo{
-    margin-top: 20vh;
-    display: grid;
-    grid-template-columns: 25% 25% 25%;
-    justify-content: center;
-    text-align: center;
-}
+ #schoolInfo {
+     margin-top: 20vh;
+     display: grid;
+     grid-template-columns: 25% 25% 25%;
+     justify-content: center;
+     text-align: center;
+ }
 
-.startingImage{
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
-}
+ .startingImage {
+     width: 80px;
+     height: 80px;
+     margin-bottom: 1rem;
+ }
 
-.infoLabel{
-    font-size: 1.8vh;
-}
+ .infoLabel {
+     font-size: 1.8vh;
+ }
 
-.iconLabel{
-    font-weight: bold; 
-    font-size: 3vh;
-    margin-bottom: 1vh;
-}
+ .iconLabel {
+     font-weight: bold;
+     font-size: 3vh;
+     margin-bottom: 1vh;
+ }
 
-#matToolBar{
-    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
-}
+ #matToolBar {
+     box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+ }
+
+ .schoolInfoDiv:hover .startingImage{
+    width: 90px;
+    height: 85px;
+ }

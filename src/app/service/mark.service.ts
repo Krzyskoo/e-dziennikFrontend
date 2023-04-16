@@ -8,7 +8,7 @@ export class MarkService {
   private baseUrl = "http://localhost:8080";
   constructor(private http : HttpClient) { }
 
-  async getMarks(username: string): Promise<SubjectModel[]> {
+  async getMarks(): Promise<SubjectModel[]> {
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
@@ -17,7 +17,7 @@ export class MarkService {
       headers: new HttpHeaders(headerDict)
     };
 
-    var result = await this.http.get<SubjectModel[]>(`${this.baseUrl}/subjects/marks/${username}`, requestOptions).toPromise();
+    var result = await this.http.get<SubjectModel[]>(`${this.baseUrl}/subjects/marks`, requestOptions).toPromise();
     if (!result) {
       return [];
     }

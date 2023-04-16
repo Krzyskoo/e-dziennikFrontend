@@ -9,13 +9,19 @@ import { MarkService, SubjectModel } from '../service/mark.service';
   encapsulation: ViewEncapsulation.None
 })
 export class UserMarksComponent implements OnInit{
+  step!: number;
   studentMarks : SubjectModel[] = [];
   constructor(private markService: MarkService){
   }
 
   async ngOnInit() {
-   const marks = await this.markService.getMarks(localStorage.getItem('login')!);
+   const marks = await this.markService.getMarks();
    this.studentMarks = marks;
    console.log(this.studentMarks);
   }
+
+  setStep(index: number)
+{
+  this.step = index;
+}
 }

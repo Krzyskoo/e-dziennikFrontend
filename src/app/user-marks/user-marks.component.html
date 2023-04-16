@@ -1,13 +1,11 @@
-<div id="witam">
-    <div id="flaskDiv">
-        <img id="flaskImage" src="/assets/images/flask.png" alt="flask">
-        <div id="flaskLabel">Kursy, w których uczestniczy Twoje dziecko</div>
-    </div>
+<div id="imageWrapper">
+    <img id="microscopeImage" background-image src="/assets/images/microscope.png" alt="microscope">
     <div id="subjectsDiv">
-        <div *ngFor="let mark of studentMarks">
-            <div class="marginDiv">
-                <mat-accordion style="margin-bottom: 1rem;">
-                    <mat-expansion-panel>
+        <p id="subjectParagraph">Kursy, w których uczestniczy Twoje dziecko</p>
+        <div *ngFor="let mark of studentMarks; let i = index" >
+            <div class="marginDiv" >
+                <mat-accordion style="margin-bottom: 1rem;" >
+                    <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 {{mark.subject  | titlecase}}
@@ -25,9 +23,23 @@
                         </div> -->
                         <div class="marksDiv">
                             <div *ngFor="let m of mark.marks" class="marks">
-                                <div class="markValue" matTooltip={{m.markNote}}>
-                                    {{m.markValue}}
+                                <div [ngSwitch]="true">
+                                    <div *ngSwitchCase="m.markNote == 'sprawdzian'" class="markValueExam" matTooltip={{m.markNote}}>
+                                        {{m.markValue}}
+                                    </div>
+                                    <div *ngSwitchCase="m.markNote == 'odpowiedź ustna'" class="markValueOralTest" matTooltip={{m.markNote}}>
+                                        {{m.markValue}}
+                                    </div>
+                                    <div *ngSwitchCase="m.markNote == 'kartkówka'" class="markValueTest" matTooltip={{m.markNote}}>
+                                        {{m.markValue}}
+                                    </div>
+                                    <div *ngSwitchDefault  class="markValueDefault" matTooltip={{m.markNote}}>
+                                        {{m.markValue}}
+                                    </div>
                                 </div>
+                                <!-- <div class="markValue" matTooltip={{m.markNote}}>
+                                    {{m.markValue}}
+                                </div> -->
                                 </div>
                         </div>
     
@@ -39,9 +51,5 @@
                 <p>{{m.markValue}}</p>
             </div>  -->
         </div>
-    
     </div>
-    
-    
-
 </div>
