@@ -1,31 +1,38 @@
-<div class="submit-form">
-  <div *ngIf="submitted">
-    <h4>You submitted successfully!</h4>
-    <button class="btn btn-success" (click)="newMark()">Add Another</button>
-  </div>
-
-  <div *ngIf="!submitted">
-    <div class="form-group">
-      <label for="username">Student username</label>
-      <input type="text" class="form-control" id="username" required [(ngModel)]="username" name="username">
-    </div>
-
-    <div class="form-group">
-      <label>Typ oceny:</label>
-      <select [(ngModel)]="markNote" name="markNote">
-        <option value="Sprawdzian">Sprawdzian</option>
-        <option value="Zadanie domowe">Zadanie domowe</option>
-        <option value="Odpowiedź ustna">Odpowiedź ustna</option>
+<h2>Dodaj ocenę</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Imię i nazwisko</th>
+    <th>Ocena</th>
+    <th>Typ oceny</th>
+    <th>Wartość oceny</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students">
+    <td>{{ student.studentName }} {{ student.studentSurname }}</td>
+    <td>
+      <select [(ngModel)]="markNote">
+        <option value="sprawdzian">Sprawdzian</option>
+        <option value="kartkówka">Kartkówka</option>
+        <option value="odpowiedź ustna">Odpowiedź ustna</option>
       </select>
-    </div>
-
-    <div class="form-group">
-      <label>Wartość oceny:</label>
-      <select [(ngModel)]="markValue" name="markValue">
-        <option *ngFor="let value of [1, 2, 3, 4, 5]" [value]="value">{{ value }}</option>
+    </td>
+    <td>
+      <select [(ngModel)]="markValue">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
       </select>
-    </div>
-
-    <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
-  </div>
-</div>
+    </td>
+    <td>
+      <form (submit)="onSubmit(student.user.login, markNote, markValue)">
+        <input type="hidden" name="studentId" [value]="student.user.login">
+        <button type="submit">Zapisz</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>

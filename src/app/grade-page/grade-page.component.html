@@ -4,15 +4,11 @@
   <thead>
   <tr>
     <th>Grade Name</th>
-    <th>Number of Students</th>
-    <th>Number of Teachers</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let grade of grades">
+  <tr *ngFor="let grade of grades" (click)="sendStudentsFromClass(grade.id)">
     <td>{{ grade.gradeName }}</td>
-    <td>{{ grade.students.length }}</td>
-    <td>{{ grade.teachers.length }}</td>
   </tr>
   </tbody>
 </table>
