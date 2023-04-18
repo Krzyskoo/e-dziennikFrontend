@@ -12,23 +12,27 @@
   <tr *ngFor="let student of students">
     <td>{{ student.studentName }} {{ student.studentSurname }}</td>
     <td>
-      <select [(ngModel)]="markNote">
+      <select [(ngModel)]="student.markNote">
         <option value="sprawdzian">Sprawdzian</option>
         <option value="kartkówka">Kartkówka</option>
         <option value="odpowiedź ustna">Odpowiedź ustna</option>
       </select>
     </td>
     <td>
-      <select [(ngModel)]="markValue">
+      <select [(ngModel)]="student.markValue">
         <option value="1">1</option>
+        <option value="1.5">1.5</option>
         <option value="2">2</option>
+        <option value="2.5">2.5</option>
         <option value="3">3</option>
+        <option value="3.5">3.5</option>
         <option value="4">4</option>
+        <option value="4.5">4.5</option>
         <option value="5">5</option>
       </select>
     </td>
     <td>
-      <form (submit)="onSubmit(student.user.login, markNote, markValue)">
+      <form (submit)="onSubmit(student.user.login, student.markNote, student.markValue)">
         <input type="hidden" name="studentId" [value]="student.user.login">
         <button type="submit">Zapisz</button>
       </form>

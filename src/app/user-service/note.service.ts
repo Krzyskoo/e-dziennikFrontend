@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {StudentDTO} from "./grade-service";
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +28,19 @@ export class NoteService {
 
     return this.http.post(`${this.apiUrl}/${id}`, note, requestOptions);
   }
+  async getStudentsByGrade(gradeId:number): Promise<StudentDTO[]> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+    var result = await this.http.get<StudentDTO[]>(`${this.apiUrl}/students/grade/${gradeId}`, requestOptions).toPromise();
+    if (!result) {
+      return [];
+    }
+    return result;
+  }
 }
+

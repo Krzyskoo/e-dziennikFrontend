@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {GradeDTO, UserDTO} from "./grade-service";
 @Injectable({
   providedIn: 'root'
 })
@@ -45,4 +46,14 @@ export class Mark {
     teacherSurname: string;
     subject: string;
   };
+}
+export class StudentDTO_mark {
+  id!: number;
+  studentName!: string;
+  studentSurname!: string;
+  grade!: GradeDTO;
+  user!: UserDTO;
+  markNote!:string;
+  markValue!:number;
+
 }

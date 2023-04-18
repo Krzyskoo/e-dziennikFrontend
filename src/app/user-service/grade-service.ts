@@ -101,6 +101,10 @@ export class StudentDTO {
   studentSurname!: string;
   grade!: GradeDTO;
   user!: UserDTO;
+  noteContent!: string; // dodaj pole noteContent
+  kindOfNote!: boolean;
+  markNote!:string;
+  markValue!:number;
 }
 
 export class GradeDTO {

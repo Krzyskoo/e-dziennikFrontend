@@ -1,23 +1,18 @@
-<mat-card>
-  <mat-card-title>Create Note</mat-card-title>
-  <form (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Student ID</mat-label>
-      <input matInput type="number" [(ngModel)]="studentId" name="studentId" required>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Note Content</mat-label>
-      <textarea matInput [(ngModel)]="noteContent" name="noteContent" required></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Czy notatka jest pozytywna?</mat-label>
-      <mat-select name="isPositive" [(ngModel)]="kindOfNote" required>
-        <mat-option [value]="true">Tak</mat-option>
-        <mat-option [value]="false">Nie</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <div class="button-container">
-      <button mat-raised-button color="primary" type="submit">Create Note</button>
+<div class="container">
+  <h2>Notes for grade {{ grade }}</h2>
+  <div *ngFor="let studentItem of student">
+    <h4>{{ studentItem.studentName }} {{ studentItem.studentSurname }}</h4>
+    <div class="form-group">
+      <label for="noteContent{{ studentItem.id }}">Note content</label>
+      <textarea class="form-control" id="noteContent{{ studentItem.id }}" rows="2" [(ngModel)]="studentItem.noteContent" maxlength="86"></textarea>
     </div>
-  </form>
-</mat-card>
+    <div class="form-group">
+      <label for="kindOfNote{{ studentItem.id }}">Kind of note</label>
+      <select class="form-control" id="kindOfNote{{ studentItem.id }}" [(ngModel)]="studentItem.kindOfNote">
+        <option value="true">Positive</option>
+        <option value="false">Negative</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" (click)="onSubmit(studentItem.id)">Create note</button>
+  </div>
+</div>

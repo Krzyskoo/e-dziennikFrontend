@@ -3,6 +3,7 @@ import {NoteModel, StudentModel, StudentService} from "../user-service/student.s
 import {TeacherService} from "../user-service/teacher.service";
 import {ActivatedRoute} from "@angular/router";
 import {NoteService} from "../user-service/note.service";
+import {Grade, GradeService, StudentDTO} from "../user-service/grade-service";
 
 @Component({
   selector: 'app-note-page',
@@ -11,20 +12,21 @@ import {NoteService} from "../user-service/note.service";
 })
 export class NotePageComponent implements OnInit{
 
-  studentId!: number;
-  noteContent!: string;
-  kindOfNote!:boolean;
+  student!: StudentDTO[];
+  grade!:number;
 
-  constructor(private route: ActivatedRoute, private noteService: NoteService) { }
+  constructor(private route: ActivatedRoute, private noteService: NoteService, private gradeService: GradeService) { }
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.studentId = +params['id'];
-    });
+  async ngOnInit(): Promise<void> {
+    const grade = this.route.snapshot.queryParamMap.get('grade')!;
+    this.grade= parseInt(grade);
+    this.student = await this.gradeService.getStudentsByGrade(this.grade);
   }
 
-  onSubmit() {
-    this.noteService.createNoteForStudent(this.studentId, this.noteContent, this.kindOfNote).subscribe(() => {
+  onSubmit(studentId: number) {
+    const studentItem = this.student.find(student => student.id === studentId);
+    // @ts-ignore
+    this.noteService.createNoteForStudent(studentId, studentItem.noteContent, studentItem.kindOfNote).subscribe(() => {
       console.log('Note created successfully');
     }, (error) => {
       console.log('Error creating note:', error);

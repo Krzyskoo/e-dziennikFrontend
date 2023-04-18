@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Mark, MarkService} from "../user-service/mark.service";
+import {Mark, MarkService, StudentDTO_mark} from "../user-service/mark.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {GradeService, Student, StudentDTO} from "../user-service/grade-service";
+import {GradeService, Note, Student, StudentDTO} from "../user-service/grade-service";
 import {popNumber} from "rxjs/internal/util/args";
 
 @Component({
@@ -12,8 +12,7 @@ import {popNumber} from "rxjs/internal/util/args";
 export class MarkPageComponent implements OnInit{
 
   username! :string;
-  markNote!:string;
-  markValue!: number;
+  mark!: Mark[];
 
   submitted = false;
   students!:StudentDTO[];
@@ -29,9 +28,9 @@ export class MarkPageComponent implements OnInit{
 
 
 
-  onSubmit(login: string, markNote: string, markValue: number): void {
+  onSubmit(login: string, markNote:string, markValue:number): void {
 
-    this.markService.saveMark(login, this.markValue,this.markNote)
+    this.markService.saveMark(login, markValue, markNote)
       .subscribe(
         response => {
           console.log(response);

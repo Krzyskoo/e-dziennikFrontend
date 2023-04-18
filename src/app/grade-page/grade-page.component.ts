@@ -29,5 +29,8 @@ export class GradePageComponent implements OnInit{
   sendStudentsFromClass(gradeId: number) {
     this.router.navigate(['/teacher/mark'], { queryParams: { grade: gradeId } });
   }
+  sendStudentFromClassToNote(gradeId : number){
+    this.router.navigate(['teacher/note'],{queryParams:{grade: gradeId}});
+  }
 
 }
