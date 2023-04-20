@@ -1,0 +1,11 @@
+<div class="notes-container">
+  <div *ngFor="let n of notes" class="note">
+    <p>{{ n.date }}</p>
+    <p>{{ n.content }}</p>
+    <p>{{ n.student }}</p>
+    <p>{{ n.id }}</p>
+    <p>{{ n.type }}</p>
+    <p>{{ n.teacher }}</p>
+    <button (click)="deleteNote(n.id)">Delete Note</button>
+  </div>
+</div>

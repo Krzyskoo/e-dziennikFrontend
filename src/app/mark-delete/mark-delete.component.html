@@ -1,0 +1,20 @@
+<table>
+  <thead>
+  <tr>
+    <th>Mark Note</th>
+    <th>Mark Value</th>
+    <th>Student</th>
+    <th>Teacher</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let mark of marks">
+    <td>{{ mark.markNote }}</td>
+    <td>{{ mark.markValue }}</td>
+    <td>{{ mark.student }}</td>
+    <td>{{ mark.teacher }}</td>
+    <td><button (click)="deleteMark(mark.id)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>

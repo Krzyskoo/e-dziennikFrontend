@@ -6,7 +6,6 @@
     <th>Grade Name</th>
     <th>Add Grade</th>
     <th>Add Note</th>
-    <th>Delete Note</th>
   </tr>
   </thead>
   <tbody>
@@ -14,7 +13,6 @@
     <td>{{ grade.gradeName }}</td>
     <td><button (click)="sendStudentsFromClass(grade.id)">Add Grade</button></td>
     <td><button (click)="sendStudentFromClassToNote(grade.id)">Add Note</button></td>
-    <td><button (click)="sendStudentsFromClass(grade.id)">Delete Note</button></td>
   </tr>
   </tbody>
 </table>

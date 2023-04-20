@@ -29,6 +29,8 @@ import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MarkPageComponent} from "./mark-page/mark-page.component";
+import { NoteDeleteComponent } from './note-delete/note-delete.component';
+import { MarkDeleteComponent } from './mark-delete/mark-delete.component';
 
 
 const routes: Routes = [
@@ -45,6 +47,10 @@ const routes: Routes = [
       { path: 'grade', component: GradePageComponent, canActivate: [LoginGuard] },
       { path: 'note', component: NotePageComponent, canActivate: [LoginGuard] },
       { path: 'mark', component: MarkPageComponent, canActivate: [LoginGuard] },
+      { path: 'noteDelete', component: NoteDeleteComponent, canActivate: [LoginGuard] },
+      { path: 'markDelete', component: MarkDeleteComponent, canActivate: [LoginGuard] }
+
+
 
     ],
     canActivate: [LoginGuard] },
@@ -61,7 +67,9 @@ const routes: Routes = [
     NotePageComponent,
     GradePageComponent,
     TeacherPageComponent,
-    MarkPageComponent
+    MarkPageComponent,
+    NoteDeleteComponent,
+    MarkDeleteComponent
   ],
   imports: [
     BrowserAnimationsModule,
