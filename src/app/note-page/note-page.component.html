@@ -1,18 +1,18 @@
 <div class="container">
-  <h2>Notes for grade {{ grade }}</h2>
-  <div *ngFor="let studentItem of student">
+  <h2 class="h2-starter">Notes for grade {{ grade }}</h2>
+  <div class="main-div" *ngFor="let studentItem of student">
     <h4>{{ studentItem.studentName }} {{ studentItem.studentSurname }}</h4>
     <div class="form-group">
-      <label for="noteContent{{ studentItem.id }}">Note content</label>
+      <label class="label-noteContent" for="noteContent{{ studentItem.id }}">Note content</label>
       <textarea class="form-control" id="noteContent{{ studentItem.id }}" rows="2" [(ngModel)]="studentItem.noteContent" maxlength="86"></textarea>
     </div>
     <div class="form-group">
-      <label for="kindOfNote{{ studentItem.id }}">Kind of note</label>
+      <label class="label-kindOfNote" for="kindOfNote{{ studentItem.id }}">Kind of note</label>
       <select class="form-control" id="kindOfNote{{ studentItem.id }}" [(ngModel)]="studentItem.kindOfNote">
-        <option value="true">Positive</option>
-        <option value="false">Negative</option>
+        <option class="option-true" value="true">Positive</option>
+        <option class="option-false" value="false">Negative</option>
       </select>
     </div>
-    <button class="btn btn-primary" (click)="onSubmit(studentItem.id)">Create note</button>
+    <button class="submit-button" (click)="onSubmit(studentItem.id)">Create note</button>
   </div>
 </div>
