@@ -116,13 +116,13 @@ input {
   ::-ms-reveal {
     filter: invert(100%);
   }
-  
+
 
   @media (max-width: 700px){
     .footer{
         display: none;
     }
-  } 
+  }
 
   .mat-mdc-card{
     box-shadow: none;
