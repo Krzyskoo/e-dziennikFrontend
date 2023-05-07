@@ -23,14 +23,14 @@ import { MatMenuModule} from '@angular/material/menu';
 import { UserNotesComponent } from './user-notes/user-notes.component';
 import { NoteModel, StudentModel, StudentService } from './user-service/student.service';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import { NotePageComponent } from './note-page/note-page.component';
+import { DialogContentExampleDialogNote, NotePageComponent } from "./note-page/note-page.component";
 import { GradePageComponent } from './grade-page/grade-page.component';
 import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {DialogContentExampleDialog, MarkPageComponent} from "./mark-page/mark-page.component";
-import { NoteDeleteComponent } from './note-delete/note-delete.component';
-import { MarkDeleteComponent } from './mark-delete/mark-delete.component';
+import { DialogContentExampleDialogDeleteNote, NoteDeleteComponent } from "./note-delete/note-delete.component";
+import { DialogContentExampleDialog2, MarkDeleteComponent } from "./mark-delete/mark-delete.component";
 import {MatDialogModule} from "@angular/material/dialog";
 
 
@@ -71,7 +71,10 @@ const routes: Routes = [
     MarkPageComponent,
     NoteDeleteComponent,
     MarkDeleteComponent,
-    DialogContentExampleDialog
+    DialogContentExampleDialog,
+    DialogContentExampleDialog2,
+    DialogContentExampleDialogNote,
+    DialogContentExampleDialogDeleteNote
   ],
   imports: [
     BrowserAnimationsModule,
@@ -95,7 +98,7 @@ const routes: Routes = [
     MatDialogModule
 
   ],
-  entryComponents:[DialogContentExampleDialog],
+  entryComponents:[DialogContentExampleDialog,DialogContentExampleDialog2,DialogContentExampleDialogNote,DialogContentExampleDialogDeleteNote],
   providers: [NoteModel, StudentService],
   bootstrap: [AppComponent]
 })

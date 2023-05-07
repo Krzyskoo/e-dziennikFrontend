@@ -1,27 +1,27 @@
 <mat-table [dataSource]="marks">
-  <ng-container matColumnDef="markNote">
+  <ng-container class="container" matColumnDef="markNote">
     <mat-header-cell *matHeaderCellDef> Mark Note </mat-header-cell>
     <mat-cell *matCellDef="let mark"> {{ mark.markNote }} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="markValue">
+  <ng-container class="container" matColumnDef="markValue">
     <mat-header-cell *matHeaderCellDef> Mark Value </mat-header-cell>
     <mat-cell *matCellDef="let mark"> {{ mark.markValue }} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="student">
+  <ng-container class="container" matColumnDef="student">
     <mat-header-cell *matHeaderCellDef> Student </mat-header-cell>
     <mat-cell *matCellDef="let mark"> {{ mark.student }} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="teacher">
+  <ng-container class="container" matColumnDef="teacher">
     <mat-header-cell *matHeaderCellDef> Teacher </mat-header-cell>
     <mat-cell *matCellDef="let mark"> {{ mark.teacher }} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="delete">
+  <ng-container class="container" matColumnDef="delete">
     <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
-    <mat-cell *matCellDef="let mark"> <button mat-raised-button color="warn" (click)="deleteMark(mark.id)">Delete</button> </mat-cell>
+    <mat-cell *matCellDef="let mark"> <button mat-raised-button color="warn" (click)="confirmDialog(mark.id)">Delete</button> </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
