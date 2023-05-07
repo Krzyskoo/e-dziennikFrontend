@@ -28,9 +28,10 @@ import { GradePageComponent } from './grade-page/grade-page.component';
 import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
-import {MarkPageComponent} from "./mark-page/mark-page.component";
+import {DialogContentExampleDialog, MarkPageComponent} from "./mark-page/mark-page.component";
 import { NoteDeleteComponent } from './note-delete/note-delete.component';
 import { MarkDeleteComponent } from './mark-delete/mark-delete.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 const routes: Routes = [
@@ -69,7 +70,8 @@ const routes: Routes = [
     TeacherPageComponent,
     MarkPageComponent,
     NoteDeleteComponent,
-    MarkDeleteComponent
+    MarkDeleteComponent,
+    DialogContentExampleDialog
   ],
   imports: [
     BrowserAnimationsModule,
@@ -89,9 +91,11 @@ const routes: Routes = [
     MatMenuModule,
     MatProgressBarModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
 
   ],
+  entryComponents:[DialogContentExampleDialog],
   providers: [NoteModel, StudentService],
   bootstrap: [AppComponent]
 })

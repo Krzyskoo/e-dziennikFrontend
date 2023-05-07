@@ -10,7 +10,9 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 })
 export class MarkDeleteComponent implements OnInit{
 
-  marks: Mark[]=[]
+  marks: Mark[]=[];
+  displayedColumns = ['markNote', 'markValue', 'student', 'teacher', 'delete'];
+
   constructor(private markDeleteService:MarkDeleteService) {
   }
 

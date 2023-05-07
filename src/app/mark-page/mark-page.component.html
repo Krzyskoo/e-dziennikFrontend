@@ -1,40 +1,47 @@
 <h2>Dodaj ocenę</h2>
-<table>
+<table class="table">
   <thead>
   <tr>
     <th>Imię i nazwisko</th>
     <th>Ocena</th>
     <th>Typ oceny</th>
     <th>Wartość oceny</th>
+    <th>Akcje</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let student of students">
     <td>{{ student.studentName }} {{ student.studentSurname }}</td>
     <td>
-      <select [(ngModel)]="student.markNote">
-        <option value="sprawdzian">Sprawdzian</option>
-        <option value="kartkówka">Kartkówka</option>
-        <option value="odpowiedź ustna">Odpowiedź ustna</option>
-      </select>
+      <mat-form-field appearance="fill">
+        <mat-label>Typ oceny</mat-label>
+        <mat-select [(ngModel)]="student.markNote" name="markNote">
+          <mat-option value="sprawdzian">Sprawdzian</mat-option>
+          <mat-option value="kartkówka">Kartkówka</mat-option>
+          <mat-option value="odpowiedź ustna">Odpowiedź ustna</mat-option>
+        </mat-select>
+      </mat-form-field>
     </td>
     <td>
-      <select [(ngModel)]="student.markValue">
-        <option value="1">1</option>
-        <option value="1.5">1.5</option>
-        <option value="2">2</option>
-        <option value="2.5">2.5</option>
-        <option value="3">3</option>
-        <option value="3.5">3.5</option>
-        <option value="4">4</option>
-        <option value="4.5">4.5</option>
-        <option value="5">5</option>
-      </select>
+      <mat-form-field appearance="fill">
+        <mat-label>Wartość oceny</mat-label>
+        <mat-select [(ngModel)]="student.markValue" name="markValue">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="1.5">1.5</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="2.5">2.5</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="3.5">3.5</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="4.5">4.5</mat-option>
+          <mat-option value="5">5</mat-option>
+        </mat-select>
+      </mat-form-field>
     </td>
     <td>
       <form (submit)="onSubmit(student.user.login, student.markNote, student.markValue)">
         <input type="hidden" name="studentId" [value]="student.user.login">
-        <button type="submit">Zapisz</button>
+        <button mat-raised-button color="primary" type="submit" (click)="confirmDialog()">Zapisz</button>
       </form>
     </td>
   </tr>

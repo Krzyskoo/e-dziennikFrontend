@@ -2,17 +2,22 @@
   <h2 class="h2-starter">Notes for grade {{ grade }}</h2>
   <div class="main-div" *ngFor="let studentItem of student">
     <h4>{{ studentItem.studentName }} {{ studentItem.studentSurname }}</h4>
-    <div class="form-group">
-      <label class="label-noteContent" for="noteContent{{ studentItem.id }}">Note content</label>
-      <textarea class="form-control" id="noteContent{{ studentItem.id }}" rows="2" [(ngModel)]="studentItem.noteContent" maxlength="86"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="label-kindOfNote" for="kindOfNote{{ studentItem.id }}">Kind of note</label>
-      <select class="form-control" id="kindOfNote{{ studentItem.id }}" [(ngModel)]="studentItem.kindOfNote">
-        <option class="option-true" value="true">Positive</option>
-        <option class="option-false" value="false">Negative</option>
-      </select>
-    </div>
-    <button class="submit-button" (click)="onSubmit(studentItem.id)">Create note</button>
+    <mat-form-field>
+      <mat-label>Note content</mat-label>
+      <textarea matInput [(ngModel)]="studentItem.noteContent" maxlength="86"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Kind of note</mat-label>
+      <mat-select [(ngModel)]="studentItem.kindOfNote">
+        <mat-option value="true">Positive</mat-option>
+        <mat-option value="false">Negative</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit(studentItem.id)">Create note</button>
   </div>
 </div>
+
+
+
+
+

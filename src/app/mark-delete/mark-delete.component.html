@@ -1,20 +1,29 @@
-<table>
-  <thead>
-  <tr>
-    <th>Mark Note</th>
-    <th>Mark Value</th>
-    <th>Student</th>
-    <th>Teacher</th>
-    <th>Delete</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let mark of marks">
-    <td>{{ mark.markNote }}</td>
-    <td>{{ mark.markValue }}</td>
-    <td>{{ mark.student }}</td>
-    <td>{{ mark.teacher }}</td>
-    <td><button (click)="deleteMark(mark.id)">Delete</button></td>
-  </tr>
-  </tbody>
-</table>
+<mat-table [dataSource]="marks">
+  <ng-container matColumnDef="markNote">
+    <mat-header-cell *matHeaderCellDef> Mark Note </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.markNote }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="markValue">
+    <mat-header-cell *matHeaderCellDef> Mark Value </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.markValue }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="student">
+    <mat-header-cell *matHeaderCellDef> Student </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.student }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="teacher">
+    <mat-header-cell *matHeaderCellDef> Teacher </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.teacher }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> <button mat-raised-button color="warn" (click)="deleteMark(mark.id)">Delete</button> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
