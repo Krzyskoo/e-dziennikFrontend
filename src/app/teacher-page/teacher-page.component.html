@@ -49,8 +49,45 @@
   </mat-sidenav>
   <mat-sidenav-content id="navbarContent">
     <div *ngIf="router.url == '/teacher'">
-      Strona startowa
-    </div>
+      <div id="schoolLabel">
+        Dziennik elektroniczny szkoły podstawowej <br>im. Pączka Wielkiego w Bydgoszczy
+      </div>
+      <div id="schoolQuotation">
+
+      </div>
+      <div id="schoolInfo">
+        <div class="schoolInfoDiv">
+          <img class="startingImage" src="/assets/images/graduation.png" alt="donut">
+          <div class="iconLabel">Szkoła</div>
+          <div class="infoLabel">
+            Szkoła powstała w 2010 roku <br>
+            i od tamtej pory <br>
+            cieszy się niesłabnącą <br>
+            popularnością.
+          </div>
+        </div>
+        <div class="schoolInfoDiv">
+          <img class="startingImage" src="/assets/images/teachers.png" alt="teachers">
+          <div class="iconLabel">Nauczyciele</div>
+          <div class="infoLabel">
+            Masz do dyspozycji ponad <br>
+            50 nauczycieli. <br>
+            W szkole dostępny jest <br>
+            szkolny psycholog.
+          </div>
+        </div>
+        <div class="schoolInfoDiv">
+          <img class="startingImage" src="/assets/images/help.png" alt="help">
+          <div class="iconLabel">Pomoc</div>
+          <div class="infoLabel">
+            Pamiętaj, że wszyscy <br>
+            jesteśmy równi. <br>
+            Jeśli potrzebujesz pomocy, <br>
+            jesteśmy tu dla Ciebie.
+          </div>
+
+        </div>
+      </div>    </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 
