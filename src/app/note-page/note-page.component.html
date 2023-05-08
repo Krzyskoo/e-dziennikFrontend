@@ -10,8 +10,8 @@
       <mat-form-field>
         <mat-label>Wartość notatki</mat-label>
         <mat-select [(ngModel)]="studentItem.kindOfNote">
-          <mat-option value="true">Positive</mat-option>
-          <mat-option value="false">Negative</mat-option>
+          <mat-option value="true">Pozytywna</mat-option>
+          <mat-option value="false">Negatywna</mat-option>
         </mat-select>
       </mat-form-field>
       <button mat-raised-button color="primary" (click)="confirmDialog(studentItem.id)">Stwórz notatke</button>
