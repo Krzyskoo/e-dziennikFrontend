@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -71,13 +72,13 @@ export class Mark {
     subject: string;
   };
 }
-export class StudentDTO_mark {
-  id!: number;
-  studentName!: string;
-  studentSurname!: string;
-  grade!: GradeDTO;
-  user!: UserDTO;
-  markNote!:string;
-  markValue!:number;
+// export class StudentDTO_mark {
+//   id!: number;
+//   studentName!: string;
+//   studentSurname!: string;
+//   grade!: GradeDTO;
+//   user!: UserDTO;
+//   markNote!:string;
+//   markValue!:number;
 
-}
+// }

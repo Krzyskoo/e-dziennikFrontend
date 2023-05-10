@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Mark, MarkService, StudentDTO_mark} from "../user-service/mark.service";
+import {Mark, MarkService} from "../user-service/mark.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GradeService, Note, Student, StudentDTO} from "../user-service/grade-service";
 import {popNumber} from "rxjs/internal/util/args";

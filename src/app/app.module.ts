@@ -15,7 +15,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
+import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { UserMarksComponent } from './user-marks/user-marks.component';
@@ -25,9 +25,8 @@ import { StudentModel, StudentService } from './user-service/student.service';
 import { NoteModel, NoteService } from './user-service/note.service';
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { MatDialogModule } from '@angular/material/dialog';
 import { DialogChangePasswordComponent } from './dialog-change-password/dialog-change-password.component';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserTeachersComponent } from './user-teachers/user-teachers.component';
@@ -61,9 +60,6 @@ const routes: Routes = [
       { path: 'mark', component: MarkPageComponent, canActivate: [LoginGuard] },
       { path: 'noteDelete', component: NoteDeleteComponent, canActivate: [LoginGuard] },
       { path: 'markDelete', component: MarkDeleteComponent, canActivate: [LoginGuard] }
-
-
-
     ],
     canActivate: [LoginGuard] },
   { path: '**', redirectTo: 'student' }
@@ -77,20 +73,31 @@ const routes: Routes = [
     UserMarksComponent,
     UserNotesComponent,
     DialogChangePasswordComponent,
-    UserTeachersComponent
-  ],
-  entryComponents: [
-    DialogChangePasswordComponent,
+    UserTeachersComponent,
+    TeacherPageComponent,
     NotePageComponent,
     GradePageComponent,
+    MarkDeleteComponent, 
     TeacherPageComponent,
     MarkPageComponent,
     NoteDeleteComponent,
-    MarkDeleteComponent,
     DialogContentExampleDialog,
     DialogContentExampleDialog2,
     DialogContentExampleDialogNote,
     DialogContentExampleDialogDeleteNote
+  ],
+  entryComponents: [
+    DialogChangePasswordComponent,
+    // NotePageComponent,
+    // GradePageComponent,
+    // TeacherPageComponent,
+    // MarkPageComponent,
+    // NoteDeleteComponent,
+    // MarkDeleteComponent,
+    // DialogContentExampleDialog,
+    // DialogContentExampleDialog2,
+    // DialogContentExampleDialogNote,
+    // DialogContentExampleDialogDeleteNote
   ], 
   imports: [
     BrowserAnimationsModule,
@@ -106,15 +113,19 @@ const routes: Routes = [
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatProgressBarModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatDialogModule
-
+    MatListModule, 
+    MatMenuModule, 
+    MatProgressBarModule, 
+    MatPaginatorModule, 
+    MatDialogModule, 
+    MatExpansionModule, 
+    MatTooltipModule, 
+    MatSnackBarModule, 
+    MatGridListModule, 
+    MatAutocompleteModule, 
+    ReactiveFormsModule, 
+    MatSelectModule
   ],
-  entryComponents:[DialogContentExampleDialog,DialogContentExampleDialog2,DialogContentExampleDialogNote,DialogContentExampleDialogDeleteNote],
   providers: [NoteModel, StudentService],
   bootstrap: [AppComponent]
 })
