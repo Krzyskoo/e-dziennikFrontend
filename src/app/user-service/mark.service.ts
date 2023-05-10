@@ -24,6 +24,25 @@ export class MarkService {
 
     return result;
   }
+
+  saveMark(username: string, markValue:number, markNote:string): Observable<any> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+    const mark = {
+      markNote: markNote,
+      markValue: markValue,
+      student: { login: username },
+      teacher: { user: { id: localStorage.getItem('id') } }
+
+
+    }
+
+    return this.http.post(`${this.baseUrl}/subject/mark/${username}`, mark, requestOptions);
+  }
 }
 
 export class SubjectModel{
@@ -34,4 +53,31 @@ export class SubjectModel{
 export class MarkModel{
   markNote!: string;
   markValue!: number;
+}
+
+export class Mark {
+  id?: number;
+  markNote!: string;
+  markValue!: number;
+  student!: {
+    id: number;
+    studentName: string;
+    studentSurname: string;
+  };
+  teacher!: {
+    id: number;
+    teacherName: string;
+    teacherSurname: string;
+    subject: string;
+  };
+}
+export class StudentDTO_mark {
+  id!: number;
+  studentName!: string;
+  studentSurname!: string;
+  grade!: GradeDTO;
+  user!: UserDTO;
+  markNote!:string;
+  markValue!:number;
+
 }

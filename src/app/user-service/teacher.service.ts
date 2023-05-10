@@ -42,3 +42,18 @@ export class OneTeacherModel{
   teacherFullName!: string;
 }
 
+export class TeacherModel2{
+  id!: number;
+  login!: string;
+  password!: string;
+}
+
+export class AuthResult {
+  token!: string;
+}
+
+export class NoteModel{
+  content!: string;
+  student!: string;
+  date!: string;
+}

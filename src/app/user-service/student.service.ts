@@ -48,6 +48,23 @@ export class StudentService {
     return result;
   }
 
+  async getNotes(username: string): Promise<NoteModel[]> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+
+    var result = await this.http.get<NoteModel[]>(`${this.baseUrl}/notes/${username}`, requestOptions).toPromise();
+    if (!result) {
+      return [];
+    }
+    
+    return result;
+  }
+
   async changePassword(newPassword: NewPassword): Promise<Observable<string>> {
     const headerDict = {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -62,7 +79,8 @@ export class StudentService {
 }
 
 
-export class StudentModel {
+
+export class StudentModel{
   id!: number;
   login!: string;
   password!: string;
@@ -77,3 +95,8 @@ export class NewPassword {
   password!: string;
 }
 
+export class NoteModel{
+  content!: string;
+  teacher!: string;
+  date!: string;
+}

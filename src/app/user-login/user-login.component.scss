@@ -116,12 +116,19 @@
     margin-left: 0.5rem;
 }
 
+input {
+    color: white;
+  }
+  ::-ms-reveal {
+    filter: invert(100%);
+  }
+
 
   @media (max-width: 700px){
     .footer{
         display: none;
     }
-  } 
+  }
 
   .mat-mdc-card{
     box-shadow: none;

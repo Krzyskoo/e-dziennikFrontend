@@ -1,0 +1,20 @@
+<h2 class="h2-starter">Uwagi dla klasy {{ grade }}</h2>
+<div class="container">
+  <div class="main-div" *ngFor="let studentItem of student">
+    <div class="student-item">
+      <h4>{{ studentItem.studentName }} {{ studentItem.studentSurname }}</h4>
+      <mat-form-field>
+        <mat-label>Opis notatki</mat-label>
+        <textarea matInput [(ngModel)]="studentItem.noteContent" maxlength="86"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wartość notatki</mat-label>
+        <mat-select [(ngModel)]="studentItem.kindOfNote">
+          <mat-option value="true">Pozytywna</mat-option>
+          <mat-option value="false">Negatywna</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="confirmDialog(studentItem.id)">Stwórz notatke</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<mat-table [dataSource]="marks">
+  <ng-container class="container" matColumnDef="markNote">
+    <mat-header-cell *matHeaderCellDef> Opis </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.markNote }} </mat-cell>
+  </ng-container>
+
+  <ng-container class="container" matColumnDef="markValue">
+    <mat-header-cell *matHeaderCellDef> Ocena </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.markValue }} </mat-cell>
+  </ng-container>
+
+  <ng-container class="container" matColumnDef="student">
+    <mat-header-cell *matHeaderCellDef> Uczeń </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.student }} </mat-cell>
+  </ng-container>
+
+  <ng-container class="container" matColumnDef="teacher">
+    <mat-header-cell *matHeaderCellDef> Nauczyciel </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> {{ mark.teacher }} </mat-cell>
+  </ng-container>
+
+  <ng-container class="container" matColumnDef="delete">
+    <mat-header-cell *matHeaderCellDef> Usuń </mat-header-cell>
+    <mat-cell *matCellDef="let mark"> <button mat-raised-button color="warn" (click)="confirmDialog(mark.id)">Usuń</button> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row class="row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<style>
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>

@@ -24,6 +24,39 @@ export class NoteService {
       return [];
     }
     
+
+    return result;
+  }
+
+  createNoteForStudent(id: number, noteContent: string, kindOfNote:boolean): Observable<any> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+    const note = {
+      noteContent: noteContent,
+      student: { id: id },
+      teacher: { user: { id: localStorage.getItem('id') } },
+      kindOfNote: kindOfNote
+    };
+
+    return this.http.post(`${this.apiUrl}/note/${id}`, note, requestOptions);
+  }
+  async getStudentsByGrade(gradeId:number): Promise<StudentDTO[]> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+    var result = await this.http.get<StudentDTO[]>(`${this.apiUrl}/note/students/grade/${gradeId}`, requestOptions).toPromise();
+    if (!result) {
+      return [];
+    }
     return result;
   }
 }
@@ -34,3 +67,4 @@ export class NoteModel{
   date!: string;
   type!: boolean;
 }
+

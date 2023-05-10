@@ -27,12 +27,18 @@ export class UserLoginComponent implements OnInit {
       const payload = result.token.split('.')[1];
       const base64 = atob(payload);
       const tokenObject = JSON.parse(base64);
-      
+      const id = this.student.id;
+
       localStorage.setItem('token', result.token);
       localStorage.setItem('login', tokenObject.iss);
       localStorage.setItem('role', tokenObject.role);
+      localStorage.setItem('id', String(id));
+      if (localStorage.getItem('role')=="ROLE_TEACHER"){
+        this.router.navigate(["/teacher"]);
 
-      this.router.navigate(['/user']);
+      }else if (localStorage.getItem('role')=="ROLE_USER"){
+        this.router.navigate(["/user"]);
+      }
     } catch {
       this.anyErrors = true;
     }
