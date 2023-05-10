@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentModel, StudentService } from '../service/student.service';
+import { StudentModel, StudentService } from '../user-service/student.service';
 import { lastValueFrom } from 'rxjs';
 
 @Component({

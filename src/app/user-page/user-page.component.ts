@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentModel, StudentService } from '../service/student.service';
+import { StudentModel, StudentService } from '../user-service/student.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogChangePasswordComponent } from '../dialog-change-password/dialog-change-password.component';

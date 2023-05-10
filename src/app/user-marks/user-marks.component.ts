@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MarkService, SubjectModel } from '../service/mark.service';
+import { MarkService, SubjectModel } from '../user-service/mark.service';
 
 
 @Component({

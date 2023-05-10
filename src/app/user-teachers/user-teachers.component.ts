@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OneTeacherModel, TeacherModel, TeacherService } from '../service/teacher.service';
+import { OneTeacherModel, TeacherModel, TeacherService } from '../user-service/teacher.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 import { MatOption } from '@angular/material/core';

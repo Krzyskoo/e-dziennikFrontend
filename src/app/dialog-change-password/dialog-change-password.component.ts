@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { NewPassword, StudentModel, StudentService } from '../service/student.service';
+import { NewPassword, StudentModel, StudentService } from '../user-service/student.service';
 import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

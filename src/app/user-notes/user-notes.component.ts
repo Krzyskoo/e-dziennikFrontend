@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { NoteModel } from '../service/note.service';
-import { NoteService } from '../service/note.service';
+import { NoteModel } from '../user-service/note.service';
+import { NoteService } from '../user-service/note.service';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
