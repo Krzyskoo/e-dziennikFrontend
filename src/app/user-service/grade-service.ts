@@ -39,6 +39,20 @@ export class GradeService {
     }
     return result;
   }
+  async getTeacherGrades(): Promise<GradeDTO[]> {
+    const headerDict = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+    var result = await this.http.get<GradeDTO[]>(`${this.apiUrl}/grades`, requestOptions).toPromise();
+    if (!result) {
+      return [];
+    }
+    return result;
+  }
 }
 export class Grade {
   id!: number;
@@ -46,7 +60,6 @@ export class Grade {
   students!: Student[];
   teachers!: Teacher[];
 }
-
 export class Student {
   id!: number;
   studentName!: string;
